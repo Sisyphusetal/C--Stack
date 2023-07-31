@@ -1,8 +1,10 @@
 /**
- * A class to represents a single item of a SinglyLinkedList that can be
+ * A class to represent a single item of a SinglyLinkedList that can be
  * linked to other Node instances to form a list of linked nodes.
  */
+
 class ListNode {
+
     /**
      * Constructs a new Node instance. Executed when the 'new' keyword is used.
      * @param {any} data The data to be added into this new instance of a Node.
@@ -11,8 +13,10 @@ class ListNode {
      * @returns {ListNode} A new Node instance is returned automatically without
      *    having to be explicitly written (implicit return).
      */
+
     constructor(data) {
         this.data = data;
+
         /**
        * This property is used to link this node to whichever node is next
        * in the list. By default, this new node is not linked to any other
@@ -21,6 +25,7 @@ class ListNode {
        *
        * @type {ListNode|null}
        */
+
         this.next = null;
     }
 }
@@ -47,7 +52,18 @@ class SinglyLinkedList {
      * - Space: O(?).
      * @returns {boolean}
      */
-    isEmpty() {}
+
+    isEmpty() {
+        //return this.head === null;
+        //Or some sort of if statement returning this logic
+        if(this.head === null) {
+            return true;
+        }
+
+        else {
+            return false
+        }
+    }
 
     /**
      * Creates a new node with the given data and inserts it at the back of
@@ -57,7 +73,21 @@ class SinglyLinkedList {
      * @param {any} data The data to be added to the new node.
      * @returns {SinglyLinkedList} This list.
      */
-    insertAtBack(data) {}
+
+    insertAtBack(value) {
+        if(this.isEmpty()) {
+            this.head = new ListNode(value)
+            return this;
+        }
+
+        let runner = this.head;
+
+        while(runner.next != null) {
+            runner = runner.next;
+        }
+
+        runner.next = new ListNode(value);
+    }
 
     /**
      * Creates a new node with the given data and inserts it at the back of
@@ -69,7 +99,9 @@ class SinglyLinkedList {
      *    or null when the end of the list has been reached.
      * @returns {SinglyLinkedList} This list.
      */
-    insertAtBackRecursive(data, runner = this.head) {}
+    insertAtBackRecursive(data, runner = this.head) {
+
+    }
 
     /**
      * Calls insertAtBack on each item of the given array.
@@ -132,3 +164,9 @@ const emptyList = new SinglyLinkedList();
 
   // Print your list like so:
   // console.log(firstThreeList.toArr());
+
+
+
+let myList = new SinglyLinkedList();
+myList.insertAtBack(1).insertAtBack(2).insertAtBack(3).insertAtBack(4).insertAtBack(5).insertAtBack(6);
+myList.printList();
