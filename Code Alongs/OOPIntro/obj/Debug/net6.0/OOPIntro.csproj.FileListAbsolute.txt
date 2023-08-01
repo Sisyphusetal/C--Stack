@@ -1,0 +1,15 @@
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.csproj.AssemblyReference.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.AssemblyInfoInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.AssemblyInfo.cs
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.csproj.CoreCompileInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\bin\Debug\net6.0\OOPIntro.exe
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\bin\Debug\net6.0\OOPIntro.deps.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\bin\Debug\net6.0\OOPIntro.runtimeconfig.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\bin\Debug\net6.0\OOPIntro.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\bin\Debug\net6.0\OOPIntro.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\refint\OOPIntro.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\OOPIntro.genruntimeconfig.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\OOPIntro\obj\Debug\net6.0\ref\OOPIntro.dll

@@ -9,10 +9,10 @@ public class Person
     //Constructors are methods that are named after the class itself
     public Person() {}
 
-    public Person(string FirstName, string LastName)
+    public Person(string firstName, string lastName)
     {
-        FirstName = FirstName;
-        LastName = LastName;
+        FirstName = firstName;
+        LastName = lastName;
     }
 
     public string FullName()
