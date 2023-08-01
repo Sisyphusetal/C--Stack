@@ -30,10 +30,10 @@ class ListNode {
     }
 }
 
-    /**
-   * This class keeps track of the start (head) of the list and to store all the
-   * functionality (methods) that each list should have.
-   */
+/**
+* This class keeps track of the start (head) of the list and to store all the
+* functionality (methods) that each list should have.
+*/
 class SinglyLinkedList {
     /**
      * Constructs a new instance of an empty linked list that inherits all the
@@ -42,7 +42,7 @@ class SinglyLinkedList {
      *    returned without having to explicitly write "return".
      */
     constructor() {
-      /** @type {ListNode|null} */
+        /** @type {ListNode|null} */
         this.head = null;
     }
 
@@ -56,7 +56,7 @@ class SinglyLinkedList {
     isEmpty() {
         //return this.head === null;
         //Or some sort of if statement returning this logic
-        if(this.head === null) {
+        if (this.head === null) {
             return true;
         }
 
@@ -75,14 +75,14 @@ class SinglyLinkedList {
      */
 
     insertAtBack(value) {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             this.head = new ListNode(value)
             return this;
         }
 
         let runner = this.head;
 
-        while(runner.next != null) {
+        while (runner.next != null) {
             runner = runner.next;
         }
 
@@ -100,7 +100,19 @@ class SinglyLinkedList {
      * @returns {SinglyLinkedList} This list.
      */
     insertAtBackRecursive(data, runner = this.head) {
-
+        if (this.isEmpty()) {
+            this.head = new ListNode(data);
+            return this;
+        }
+        // check if next node is empty
+        if (runner.next !== null) {
+            // if next node is not empty, recursive call to set runner to next node
+            return this.insertAtBackRecursive(data, runner = runner.next);
+        } else { // if next node IS empty
+            // set next node to equal new data
+            runner.next = new ListNode(data);
+            return this;
+        }
     }
 
     /**
@@ -112,10 +124,52 @@ class SinglyLinkedList {
      */
     insertAtBackMany(vals) {
         for (const item of vals) {
-        this.insertAtBack(item);
+            this.insertAtBack(item);
+        }
+        return this;
     }
-    return this;
+    /**
+ * Creates a new node with the given data and inserts that node at the front
+ * of this list.
+ * - Time: (?).
+ * - Space: (?).
+ * @param {any} data The data for the new node.
+ * @returns {SinglyLinkedList} This list.
+ */
+    insertAtFront(data) { 
+        let newNode = new ListNode(data);
+
+        newNode.next = this.head;
+
+        this.head = newNode;
+
+        return this;
     }
+
+    /**
+     * Removes the first node of this list.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {any} The data from the removed node.
+     */
+    removeHead() { }
+
+    // EXTRA
+    /**
+     * Calculates the average of this list.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {number|NaN} The average of the node's data.
+     */
+    average() { }
+
+
+    /**
+     * Converts this list into an array containing the data of each node.
+     * - Time: O(n) linear.
+     * - Space: O(n).
+     * @returns {Array<any>} An array of each node's data.
+     */
 
     /**
      * Converts this list into an array containing the data of each node.
@@ -128,12 +182,26 @@ class SinglyLinkedList {
         let runner = this.head;
 
         while (runner) {
-        arr.push(runner.data);
-        runner = runner.next;
+            arr.push(runner.data);
+            runner = runner.next;
         }
-    return arr;
+        return arr;
+    }
+
+    print() {
+        let runner = this.head;
+        let vals = "";
+
+        while (runner) {
+            vals += `${runner.data}${runner.next ? ", " : ""}`;
+            runner = runner.next;
+        }
+        console.log(vals);
+        return vals;
     }
 }
+
+
 
 /******************************************************************* 
 Multiple test lists already constructed to test your methods on.
@@ -142,28 +210,28 @@ after completing it, uncomment the code.
   */
 const emptyList = new SinglyLinkedList();
 
-  // const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
-  // const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
-  // const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
-  // const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
-  // const unorderedList = new SinglyLinkedList().insertAtBackMany([
-  //   -5, -10, 4, -3, 6, 1, -7, -2,
-  // ]);
+// const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
+// const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
+// const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
+// const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
+// const unorderedList = new SinglyLinkedList().insertAtBackMany([
+//   -5, -10, 4, -3, 6, 1, -7, -2,
+// ]);
 
-  /* node 4 connects to node 1, back to head */
-  // const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
-  // perfectLoopList.head.next.next.next = perfectLoopList.head;
+/* node 4 connects to node 1, back to head */
+// const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
+// perfectLoopList.head.next.next.next = perfectLoopList.head;
 
-  /* node 4 connects to node 2 */
-  // const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
-  // loopList.head.next.next.next = loopList.head.next;
+/* node 4 connects to node 2 */
+// const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
+// loopList.head.next.next.next = loopList.head.next;
 
-  // const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
-  //   1, 1, 1, 2, 3, 3, 4, 5, 5,
-  // ]);
+// const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
+//   1, 1, 1, 2, 3, 3, 4, 5, 5,
+// ]);
 
-  // Print your list like so:
-  // console.log(firstThreeList.toArr());
+// Print your list like so:
+// console.log(firstThreeList.toArr());
 
 
 

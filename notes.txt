@@ -1,0 +1,10 @@
+Commands List:
+    dotnet new console -f net6.0 -o <ProjectName>
+
+
+
+
+
+
+Keyboard Shortcuts:
+    shift+alt+down = copy paste code below highlighted section
