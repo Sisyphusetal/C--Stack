@@ -4,6 +4,9 @@ Commands List:
     dotnet tool install --global dotnet-ef
         -Entity framework install
 
+    ctrl-leftclick
+        -Provides more context on built-in methods
+
     
 
 
