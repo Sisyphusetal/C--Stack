@@ -79,14 +79,15 @@ class SinglyLinkedList {
             this.head = new ListNode(value)
             return this;
         }
-
         let runner = this.head;
 
         while (runner.next != null) {
             runner = runner.next;
         }
 
-        runner.next = new ListNode(value);
+        runner.next = new ListNode(value)
+        return this;
+
     }
 
     /**
@@ -136,7 +137,7 @@ class SinglyLinkedList {
  * @param {any} data The data for the new node.
  * @returns {SinglyLinkedList} This list.
  */
-    insertAtFront(data) { 
+    insertAtFront(data) {
         let newNode = new ListNode(data);
 
         newNode.next = this.head;
@@ -152,7 +153,13 @@ class SinglyLinkedList {
      * - Space: (?).
      * @returns {any} The data from the removed node.
      */
-    removeHead() { }
+    removeHead() {
+        if(!this.head) {
+            return;
+        }
+        this.head = this.head.next;
+        return this;
+    }
 
     // EXTRA
     /**
@@ -161,7 +168,9 @@ class SinglyLinkedList {
      * - Space: (?).
      * @returns {number|NaN} The average of the node's data.
      */
-    average() { }
+    average() { 
+
+    }
 
 
     /**
@@ -237,4 +246,6 @@ const emptyList = new SinglyLinkedList();
 
 let myList = new SinglyLinkedList();
 myList.insertAtBack(1).insertAtBack(2).insertAtBack(3).insertAtBack(4).insertAtBack(5).insertAtBack(6);
-myList.printList();
+myList.print();
+myList.removeHead().removeHead();
+myList.print();
