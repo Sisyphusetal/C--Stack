@@ -154,11 +154,19 @@ class SinglyLinkedList {
      * @returns {any} The data from the removed node.
      */
     removeHead() {
-        if(!this.head) {
-            return;
-        }
-        this.head = this.head.next;
-        return this;
+        delete this.head
+
+        //this.isEmpty method
+        //retain current head value for future return
+        //change head to next node
+        //remove node's next so is it's own node
+        //then return
+
+        // if(!this.head) {
+        //     return;
+        // }
+        // this.head = this.head.next;
+        // return this;
     }
 
     // EXTRA
@@ -197,16 +205,41 @@ class SinglyLinkedList {
         return arr;
     }
 
-    print() {
-        let runner = this.head;
-        let vals = "";
+    // print() {
+    //     let runner = this.head;
+    //     let vals = "";
 
-        while (runner) {
-            vals += `${runner.data}${runner.next ? ", " : ""}`;
+    //     while (runner) {
+    //         vals += `${runner.data}${runner.next ? ", " : ""}`;
+    //         runner = runner.next;
+    //     }
+    //     console.log(vals);
+    //     return vals;
+    // }
+
+    print() {
+        if (this.isEmpty()) {
+            console.log("This list is empty");
+            return this;
+        }
+        // We need to initialize an empty string
+        let toPrint = "";
+        // And start a runner at the head of the list.
+        let runner = this.head;
+        // We want to perform something every time runner isn't null
+        while (runner != null) {
+            // Add the new value and an arrow (oh so fancy, I know!)
+            // to the string we want to print
+            toPrint += `${runner.data} -> `;
+            // And move runner to the next node. This is gonna be your 
+            // bread and butter when it comes to linked lists
             runner = runner.next;
         }
-        console.log(vals);
-        return vals;
+        // What good is our print list method if it doesn't console log?!
+        console.log(toPrint);
+        // And just so we can chain methods (idk why you'd want to chain from print list,
+        // but why not), just return this.
+        return this;
     }
 }
 
@@ -247,5 +280,5 @@ const emptyList = new SinglyLinkedList();
 let myList = new SinglyLinkedList();
 myList.insertAtBack(1).insertAtBack(2).insertAtBack(3).insertAtBack(4).insertAtBack(5).insertAtBack(6);
 myList.print();
-myList.removeHead().removeHead();
+myList.removeHead();
 myList.print();

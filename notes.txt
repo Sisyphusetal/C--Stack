@@ -1,6 +1,11 @@
 Commands List:
     dotnet new console -f net6.0 -o <ProjectName>
 
+    dotnet tool install --global dotnet-ef
+        -Entity framework install
+
+    
+
 
 
 
