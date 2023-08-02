@@ -1,0 +1,15 @@
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\bin\Debug\net6.0\FundamentalsThree.exe
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\bin\Debug\net6.0\FundamentalsThree.deps.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\bin\Debug\net6.0\FundamentalsThree.runtimeconfig.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\bin\Debug\net6.0\FundamentalsThree.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\bin\Debug\net6.0\FundamentalsThree.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.csproj.AssemblyReference.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.AssemblyInfoInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.AssemblyInfo.cs
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.csproj.CoreCompileInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\refint\FundamentalsThree.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\FundamentalsThree.genruntimeconfig.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\FundamentalsThree\obj\Debug\net6.0\ref\FundamentalsThree.dll
