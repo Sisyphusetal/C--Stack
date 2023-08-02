@@ -154,19 +154,11 @@ class SinglyLinkedList {
      * @returns {any} The data from the removed node.
      */
     removeHead() {
-        delete this.head
-
-        //this.isEmpty method
-        //retain current head value for future return
-        //change head to next node
-        //remove node's next so is it's own node
-        //then return
-
-        // if(!this.head) {
-        //     return;
-        // }
-        // this.head = this.head.next;
-        // return this;
+        if (!this.head) {
+            return;
+        }
+        this.head = this.head.next;
+        return this;
     }
 
     // EXTRA
@@ -176,10 +168,109 @@ class SinglyLinkedList {
      * - Space: (?).
      * @returns {number|NaN} The average of the node's data.
      */
-    average() { 
-
+    average() {
+        // Check if the list is empty. If so, return null.
+        if (this.isEmpty()) {
+            return null;
+        }
+        // Initialize variables to keep track of the sum of data and the count of nodes in the list.
+        let runner = this.head;
+        let sum = 0;
+        let cnt = 0;
+        // Iterate through each node in the list.
+        while (runner) {
+            // Increment the count of nodes.
+            cnt++;
+            // Add the data of the current node to the sum.
+            sum += runner.data;
+            // Move the runner to the next node.
+            runner = runner.next;
+        }
+        // Calculate and return the average by dividing the sum by the count of nodes.
+        return sum / cnt;
     }
 
+    /**
+ * Removes the last node of this list.
+ * - HINT: Figuring out a way to find the SECOND TO LAST node will be immensely helpful!
+ * - Time: O(?).
+ * - Space: O(?).
+ * @returns {any} The data from the node that was removed.
+ */
+    removeBack() {
+        if(this.isEmpty()) {
+            return null;
+        }
+
+        if(this.head.next == null) {
+            return null;
+        }
+
+        let runner = this.head;
+
+        while(runner.next.next != null) {
+            runner = runner.next;
+        }
+        
+        runner.next = null;
+
+        return this;
+    }
+
+    /**
+ * Determines whether or not the given search value exists in this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} val The data to search for in the nodes of this list.
+ * @returns {boolean}
+ */
+    contains(val) {
+        if(this.isEmpty()) {
+            return null;
+        }
+
+        let runner = this.head;
+        let valueIsPresent = false;
+
+        //alternatively, 'runner.next != null' can simply be replaced by 'runner'
+        //due to null being falsy in nature.
+        while(runner.next != null) {
+            if(runner.data == val) {
+                valueIsPresent = true;
+            }
+            runner = runner.next;
+        }
+
+        console.log(valueIsPresent);
+    }
+
+    /** EXTRA
+ * Determines whether or not the given search value exists in this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} val The data to search for in the nodes of this list.
+ * @param {?ListNode} current The current node during the traversal of this list
+ *    or null when the end of the list has been reached.
+ * @returns {boolean}
+ */
+    containsRecursive(val, current = this.head) {
+        //Logic here
+    }
+
+    // EXTRA
+    /**
+     * Recursively finds the maximum integer data of the nodes in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {ListNode} runner The start or current node during traversal, or null
+     *    when the end of the list is reached.
+     * @param {ListNode} maxNode Keeps track of the node that contains the current
+     *    max integer as it's data.
+     * @returns {?number} The max int or null if none.
+     */
+    recursiveMax(runner = this.head, maxNode = this.head) {
+        //Logic here
+    }
 
     /**
      * Converts this list into an array containing the data of each node.
@@ -204,18 +295,6 @@ class SinglyLinkedList {
         }
         return arr;
     }
-
-    // print() {
-    //     let runner = this.head;
-    //     let vals = "";
-
-    //     while (runner) {
-    //         vals += `${runner.data}${runner.next ? ", " : ""}`;
-    //         runner = runner.next;
-    //     }
-    //     console.log(vals);
-    //     return vals;
-    // }
 
     print() {
         if (this.isEmpty()) {
@@ -278,7 +357,11 @@ const emptyList = new SinglyLinkedList();
 
 
 let myList = new SinglyLinkedList();
-myList.insertAtBack(1).insertAtBack(2).insertAtBack(3).insertAtBack(4).insertAtBack(5).insertAtBack(6);
+myList.insertAtBack(1)
+//.insertAtBack(2).insertAtBack(3).insertAtBack(4).insertAtBack(5).insertAtBack(6);
+// myList.print();
+myList.removeBack()
+//.removeBack();
 myList.print();
-myList.removeHead();
-myList.print();
+// myList.contains(2);
+// myList.contains(14);
