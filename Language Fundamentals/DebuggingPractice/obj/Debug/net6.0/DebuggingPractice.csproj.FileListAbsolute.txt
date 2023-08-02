@@ -1,0 +1,5 @@
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\DebuggingPractice\obj\Debug\net6.0\DebuggingPractice.csproj.AssemblyReference.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\DebuggingPractice\obj\Debug\net6.0\DebuggingPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\DebuggingPractice\obj\Debug\net6.0\DebuggingPractice.AssemblyInfoInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\DebuggingPractice\obj\Debug\net6.0\DebuggingPractice.AssemblyInfo.cs
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\DebuggingPractice\obj\Debug\net6.0\DebuggingPractice.csproj.CoreCompileInputs.cache
