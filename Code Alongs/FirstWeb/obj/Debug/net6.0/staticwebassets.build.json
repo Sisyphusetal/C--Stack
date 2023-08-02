@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "n6IWFnRrat9IClrlcgavw/aGpK8VTpTDPa7RXNtnDLM=",
+  "Source": "FirstWeb",
+  "BasePath": "_content/FirstWeb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FirstWeb\\wwwroot",
+      "Source": "FirstWeb",
+      "ContentRoot": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\wwwroot\\",
+      "BasePath": "_content/FirstWeb",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
