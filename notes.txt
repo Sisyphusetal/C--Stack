@@ -10,7 +10,8 @@ Commands List:
     ctrl-leftclick
         -Provides more context on built-in methods
 
-    
+    #pragma warning disable CS8618
+        -Disables warning for non nullable fields not being filled
 
 
 

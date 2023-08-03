@@ -1,8 +1,33 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Pet Store";
 }
 
+@* This view is expecting to recieve an instance of the Pet Model as its base of information *@
+@model Pet
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to our @ViewData["Title"]</h1>
+    <form asp-action="Create" asp-controller="Home" method="post">
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" type="text" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Species"></label>
+            <input asp-for="Species" type="text" class="form-control">
+            <span asp-validation-for="Species" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IsFriendly"></label>
+            <input asp-for="IsFriendly" type="checkbox">
+            <span asp-validation-for="IsFriendly" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age"></label>
+            <input asp-for="Age" type="number" class="form-control">
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn-outline-dark">Add Pet</button>
+    </form>
 </div>

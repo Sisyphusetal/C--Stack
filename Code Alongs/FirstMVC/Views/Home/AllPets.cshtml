@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "All Pets Page";
+}
+
+@model List<Pet>
+
+
+<h1>@ViewData["Title"]</h1>
+
+@foreach(Pet p in Model)
+{
+    <h2>Name: @p.Name</h2>
+    <h3>Age: @p.Age</h3>
+    <h4>Type: @p.Species</h4>
+    <h5>This pet @(p.IsFriendly ? "is friendly!" : "is not friendly.")</h5>
+}

@@ -8,6 +8,7 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
+    public static List<Pet> Pets = new List<Pet>();
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
@@ -17,12 +18,30 @@ public class HomeController : Controller
     [HttpGet("/")]
     public IActionResult Index()
     {
+        //If view is returned empty, it looks to the method name
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost("/pet/create")]
+    public IActionResult Create(Pet newPet)
     {
-        return View();
+
+        if(ModelState.IsValid)
+        {
+            Pets.Add(newPet);
+            return RedirectToAction("AllPets");
+        }
+        else{
+            return View("Index");
+        }
+
+        
+    }
+
+    [HttpGet("/allpets")]
+    public IActionResult AllPets()
+    {
+        return View("AllPets", Pets);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
