@@ -198,20 +198,20 @@ class SinglyLinkedList {
  * @returns {any} The data from the node that was removed.
  */
     removeBack() {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             return null;
         }
 
-        if(this.head.next == null) {
+        if (this.head.next == null) {
             return null;
         }
 
         let runner = this.head;
 
-        while(runner.next.next != null) {
+        while (runner.next.next != null) {
             runner = runner.next;
         }
-        
+
         runner.next = null;
 
         return this;
@@ -225,7 +225,7 @@ class SinglyLinkedList {
  * @returns {boolean}
  */
     contains(val) {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             return null;
         }
 
@@ -234,8 +234,8 @@ class SinglyLinkedList {
 
         //alternatively, 'runner.next != null' can simply be replaced by 'runner'
         //due to null being falsy in nature.
-        while(runner.next != null) {
-            if(runner.data == val) {
+        while (runner.next != null) {
+            if (runner.data == val) {
                 valueIsPresent = true;
             }
             runner = runner.next;
@@ -254,7 +254,19 @@ class SinglyLinkedList {
  * @returns {boolean}
  */
     containsRecursive(val, current = this.head) {
-        //Logic here
+        // Base case: If we reach the end of the list (current is null),
+        // we didn't find the value, so return false.
+        if (current === null) {
+            return false;
+        }
+        // Check if the current node's data is equal to the given value.
+        if (current.data === val) {
+            // If we find the value in the current node, return true.
+            return true;
+        }
+        // Recursive case: Call the function again with the next node in the linked list.
+        // This will continue the search through the list until the base case is reached.
+        return this.containsRecursive(val, current.next);
     }
 
     // EXTRA
@@ -269,7 +281,92 @@ class SinglyLinkedList {
      * @returns {?number} The max int or null if none.
      */
     recursiveMax(runner = this.head, maxNode = this.head) {
-        //Logic here
+        // Base case: If the list is empty (head is null), return null.
+        if (this.head === null) {
+            return null;
+        }
+        // Base case: If we have reached the end of the list (runner is null),
+        // return the data of the node containing the maximum value.
+        if (runner === null) {
+            return maxNode.data;
+        }
+        // Compare the data of the current node (runner) with the maximum node (maxNode).
+        // If the data of the current node is greater than the data of the maximum node,
+        // update maxNode to point to the current node.
+        if (runner.data > maxNode.data) {
+            maxNode = runner;
+        }
+        // Recursive case: Call the function again with the next node in the linked list
+        // and the updated maxNode.
+        // This will continue to traverse through the list, updating maxNode whenever a larger value is found.
+        return this.recursiveMax(runner.next, maxNode);
+    }
+
+    /**
+   * Retrieves the data of the second to last node in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The data of the second to last node or null if there is no
+   *    second to last node.
+   */
+    secondToLast() {
+        if(this.isEmpty() || this.head.next == null) {
+            return null;
+        }
+
+        let runner = this.head;
+        
+        
+        while (runner.next.next != null) {
+            runner = runner.next;
+        }
+
+        return runner.data;
+    }
+
+    /**
+     * Removes the node that has the matching given val as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The value to compare to the node's data to find the
+     *    node to be removed.
+     * @returns {boolean} Indicates if a node was removed or not.
+     */
+    removeVal(val) {
+        if(this.isEmpty()) {
+            return null;
+        }
+
+        let runner = this.head;
+
+        if(runner.data == val) {
+            this.head = runner.next;
+            return true;
+        }
+
+        while(runner.next != null || runner != null) {
+            if(runner.next.data == val) {
+                runner.next = runner.next.next;
+                return true;
+            }
+            runner = runner.next;
+        }
+
+        return false;
+    }
+
+    // EXTRA
+    /**
+     * Inserts a new node before a node that has the given value as its data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} newVal The value to use for the new node that is being added.
+     * @param {any} targetVal The value to use to find the node that the newVal
+     *    should be inserted in front of.
+     * @returns {boolean} To indicate whether the node was pre-pended or not.
+     */
+    prepend(newVal, targetVal) { 
+
     }
 
     /**
