@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n6IWFnRrat9IClrlcgavw/aGpK8VTpTDPa7RXNtnDLM=",
+  "Hash": "QXjNBEPahflL665zGa0mh8/aNWTWTEFWa73RQDuxw+c=",
   "Source": "FirstWeb",
   "BasePath": "_content/FirstWeb",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\wwwroot\\images\\one.jpg",
+      "SourceId": "FirstWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\wwwroot\\",
+      "BasePath": "_content/FirstWeb",
+      "RelativePath": "images/one.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\one.jpg"
+    }
+  ]
 }

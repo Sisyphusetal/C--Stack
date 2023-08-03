@@ -14,10 +14,35 @@ public class HelloController : Controller   // Remember inheritance?
     //     return "Hello World from HelloController!";
     // }
 
-    [HttpGet("")]
+    [HttpGet("/")]
     public ViewResult Index()
     {
+        //Interpret this line as a key:value pair
+        ViewBag.ReaperUlt = "Overwatch";
+        ViewBag.Number = 2;
+
         return View();
+    }
+
+    [HttpGet("/user/more")]
+    public ViewResult OneUser()
+    {
+        ViewBag.StarWars = "Darth Vader";
+
+        return View();
+    }
+
+    [HttpPost("process")]
+    public IActionResult Process(string favoriteAnimal)
+    {
+
+        if(favoriteAnimal.ToLower() == "dog")
+        {
+            ViewBag.Error = "Dogs are a great pick but choose something else!";
+            return View("Index");
+        }
+
+        return RedirectToAction("Index");
     }
 }
 

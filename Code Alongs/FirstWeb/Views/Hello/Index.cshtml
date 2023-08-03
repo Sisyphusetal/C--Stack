@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello World</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+
+
+    <h1>Hello, I love playing @(ViewBag.ReaperUlt + " " + @ViewBag.Number)!</h1>
+    <a href="/user/more">One User</a>
+
+    @{
+        for(int i=0; i<5; i++)
+        {
+            <p>The number is @i</p>
+        }
+
+    }
+
+    <form action="process" method="post">
+        <label for="favoriteAnimal">What is your favorite animal? </label>
+        <input type="text" name="favoriteAnimal">
+        <span>
+            @{
+                if(ViewBag.Error == null)
+                {
+                    <p>A fine choice.</p>
+                }
+                else
+                {
+                    <div>
+                        <img src="~/images/one.jpg" alt="one.jpg" height="150px">
+                    </div>
+                }
+            }
+        </span>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

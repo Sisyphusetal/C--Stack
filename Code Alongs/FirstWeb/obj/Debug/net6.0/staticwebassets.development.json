@@ -1,1 +1,1 @@
-{"ContentRoots":["C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\wwwroot\\"],"Root":{"Children":null,"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\wwwroot\\"],"Root":{"Children":{"images":{"Children":{"one.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/one.jpg"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
