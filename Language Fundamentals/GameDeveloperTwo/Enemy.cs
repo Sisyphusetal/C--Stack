@@ -20,7 +20,7 @@ public class Enemy
 
     public virtual void PerformAttack(Enemy Target, Attack ChosenAttack)
     {
-        Target.Health - Attack.DamageAmount;
-        Console.WriteLine($"{Name} attacks {Target.Name}, dealing {ChosenAttack.DamageAmount} damage and reducing {Target.Name}'s health to {Target.Health}!");
+        Target.Health -= ChosenAttack.DamageAmount;
+        Console.WriteLine($"{Name} attacks {Target.Name} with {ChosenAttack.Name}, dealing {ChosenAttack.DamageAmount} damage and reducing {Target.Name}'s health to {Target.Health}!");
     }
 }

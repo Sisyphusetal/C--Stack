@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj": {}
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj": {
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj",
+        "projectUniqueName": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj",
         "projectName": "HelloDotNet",
-        "projectPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj",
+        "projectPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\HelloDotNet.csproj",
         "packagesPath": "C:\\Users\\kurtj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\obj\\",
+        "outputPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\HelloDotNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kurtj\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -18,7 +18,7 @@ public class MeleeFighter : Enemy
         Random rand = new Random();
         string RageAttackName = AttackList[rand.Next(0, AttackList.Count)].Name;
         int RageAttackDamage = AttackList[rand.Next(0, AttackList.Count)].DamageAmount + 10;
-        Target.Health - RageAttackDamage;
-        Console.WriteLine($"{MeleeFighter.Name} rages, using {RageAttackName} and dealing {RageAttackDamage}! {Target} now has {Target.Health} health remaining!");
+        Target.Health = Target.Health - RageAttackDamage;
+        Console.WriteLine($"{Name} rages, using {RageAttackName} and dealing {RageAttackDamage}! {Target.Name} now has {Target.Health} health remaining!");
     }
 }

@@ -5,7 +5,11 @@ public class RangedFighter : Enemy
 
     public RangedFighter (string name) : base(name)
     {   
-        List<Attack> AttackList = new List<Attack> {new Attack("Shoot an arrow", 20),new Attack("Throw a knife", 15)};
+        AttackList = new List<Attack> 
+        {
+            new Attack("Shoot an arrow", 20),
+            new Attack("Throw a knife", 15),
+        };
         Distance = 5;
     }
 
@@ -16,7 +20,7 @@ public class RangedFighter : Enemy
             Console.WriteLine($"Oh no, the enemy is too close! {Name} cannot attack!");
         }
         else{
-        base.PerformAttack();
+        base.PerformAttack(Target, ChosenAttack);
         }
     }
 

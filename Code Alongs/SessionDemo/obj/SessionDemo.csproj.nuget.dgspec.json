@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj": {}
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj": {
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj",
+        "projectUniqueName": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj",
         "projectName": "SessionDemo",
-        "projectPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj",
+        "projectPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\SessionDemo.csproj",
         "packagesPath": "C:\\Users\\kurtj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\obj\\",
+        "outputPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\SessionDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kurtj\\AppData\\Roaming\\NuGet\\NuGet.Config"

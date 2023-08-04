@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj": {}
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj": {
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj",
+        "projectUniqueName": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj",
         "projectName": "DebuggingPractice",
-        "projectPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj",
+        "projectPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\DebuggingPractice.csproj",
         "packagesPath": "C:\\Users\\kurtj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\obj\\",
+        "outputPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\DebuggingPractice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kurtj\\AppData\\Roaming\\NuGet\\NuGet.Config"

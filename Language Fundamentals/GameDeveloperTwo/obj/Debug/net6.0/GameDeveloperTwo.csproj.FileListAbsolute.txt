@@ -3,3 +3,13 @@ C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\
 C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.AssemblyInfoInputs.cache
 C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.AssemblyInfo.cs
 C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.csproj.CoreCompileInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\bin\Debug\net6.0\GameDeveloperTwo.exe
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\bin\Debug\net6.0\GameDeveloperTwo.deps.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\bin\Debug\net6.0\GameDeveloperTwo.runtimeconfig.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\bin\Debug\net6.0\GameDeveloperTwo.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\bin\Debug\net6.0\GameDeveloperTwo.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\refint\GameDeveloperTwo.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.genruntimeconfig.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\ref\GameDeveloperTwo.dll

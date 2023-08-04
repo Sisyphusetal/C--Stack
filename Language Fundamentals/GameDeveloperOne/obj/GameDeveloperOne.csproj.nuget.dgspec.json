@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj": {}
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj": {
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj",
+        "projectUniqueName": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj",
         "projectName": "GameDeveloperOne",
-        "projectPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj",
+        "projectPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\GameDeveloperOne.csproj",
         "packagesPath": "C:\\Users\\kurtj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\obj\\",
+        "outputPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperOne\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kurtj\\AppData\\Roaming\\NuGet\\NuGet.Config"

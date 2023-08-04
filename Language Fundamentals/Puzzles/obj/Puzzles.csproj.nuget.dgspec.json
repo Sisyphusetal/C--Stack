@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj": {}
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj": {
+    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj",
+        "projectUniqueName": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj",
         "projectName": "Puzzles",
-        "projectPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj",
+        "projectPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\Puzzles.csproj",
         "packagesPath": "C:\\Users\\kurtj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\obj\\",
+        "outputPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\Puzzles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kurtj\\AppData\\Roaming\\NuGet\\NuGet.Config"

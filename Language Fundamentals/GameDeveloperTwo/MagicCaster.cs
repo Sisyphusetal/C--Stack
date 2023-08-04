@@ -16,6 +16,6 @@ public class MagicCaster : Enemy
     public void Heal(Enemy Target)
     {
         Target.Health += 40;
-        Console.WriteLine($"{MagicCaster.Name} heals {Target.Name}! Their health is now {Target.Health!}");
+        Console.WriteLine($"{Name} heals {Target.Name}! Their health is now {Target.Health}!");
     }
 }
