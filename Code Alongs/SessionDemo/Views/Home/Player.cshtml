@@ -1,1 +1,37 @@
-<h1>Ye olde list of players:</h1>
+<h1>Player List:</h1>
+
+<form asp-action="updatePlayer">
+    <div>
+        <label for="CharacterName">Character Name:</label>
+        <input type="text" name="CharacterName">
+    </div>
+
+    <div>
+        <label for="CharacterLevel">Character Level:</label>
+        <input type="number" name="CharacterLevel">
+    </div>
+
+    <input class="btn btn-success border" type="submit" value="Update Player">
+</form>
+
+<div class = "container">
+
+@if (Context.Session.GetString("CharacterName") == null)
+{
+    <p>Enter a character name.</p>
+}
+else
+{
+    <h2>Character Name: @Context.Session.GetString("CharacterName")</h2>
+}
+
+@if (Context.Session.GetInt32("CharacterLevel") == null)
+{
+    <p>Enter a character level.</p>
+}
+else
+{
+    <h2>Character level: @Context.Session.GetInt32("CharacterLevel")</h2>
+}
+
+</div>

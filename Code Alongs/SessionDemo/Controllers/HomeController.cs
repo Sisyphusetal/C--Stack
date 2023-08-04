@@ -29,9 +29,23 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
+    [HttpGet("Logout")]
+    public IActionResult Logout()
+    {
+        //HttpContext.Session.Remove("UserName");
+        HttpContext.Session.Clear();
+        return RedirectToAction("Index");
+    }
+
     [HttpGet("Player")]
     public IActionResult Player()
     {
+        if (HttpContext.Session.GetString("UserName") == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+
         return View();
     }
 
@@ -40,6 +54,8 @@ public class HomeController : Controller
     {
         HttpContext.Session.SetString("CharacterName", CharacterName);
         HttpContext.Session.SetInt32("CharacterLevel", CharacterLevel);
+
+        int? IntVariable = HttpContext.Session.GetInt32("CharacterLevel");
 
         return RedirectToAction("Player");
     }
