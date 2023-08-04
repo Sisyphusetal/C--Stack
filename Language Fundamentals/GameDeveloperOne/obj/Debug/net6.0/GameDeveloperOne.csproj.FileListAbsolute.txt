@@ -1,0 +1,15 @@
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.csproj.AssemblyReference.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.AssemblyInfoInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.AssemblyInfo.cs
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.csproj.CoreCompileInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\bin\Debug\net6.0\GameDeveloperOne.exe
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\bin\Debug\net6.0\GameDeveloperOne.deps.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\bin\Debug\net6.0\GameDeveloperOne.runtimeconfig.json
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\bin\Debug\net6.0\GameDeveloperOne.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\bin\Debug\net6.0\GameDeveloperOne.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\refint\GameDeveloperOne.dll
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.pdb
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\GameDeveloperOne.genruntimeconfig.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperOne\obj\Debug\net6.0\ref\GameDeveloperOne.dll
