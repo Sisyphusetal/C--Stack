@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿class Attack
+{
+    string Fireball;
+    int DamageAmount
+}
+
+
+class Enemy
+{
+    string Name;
+    int Health;
+    <List> AttackList
+}
