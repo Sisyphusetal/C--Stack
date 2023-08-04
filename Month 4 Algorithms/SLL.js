@@ -411,20 +411,20 @@ class SinglyLinkedList {
  *    whose nodes will be added to the back of this list.
  * @returns {SinglyLinkedList} This list with the added nodes.
  */
-    concat(addList) { 
-        if(this.isEmpty()) {
+    concat(addList) {
+        if (this.isEmpty()) {
             return addList;
         }
-        if(addList.length == 0) {
+        if (addList.length == 0) {
             return this;
         }
-        if(addList.length == 0 && this.isEmpty()) {
+        if (addList.length == 0 && this.isEmpty()) {
             return null;
         }
 
         let runner = this.head;
-        
-        while(runner.next != null) {
+
+        while (runner.next != null) {
             runner = runner.next;
         }
 
@@ -442,14 +442,29 @@ class SinglyLinkedList {
  * - Space: O(?).
  * @returns {SinglyLinkedList} This list.
  */
-    moveMinToFront() { 
-        if(this.isEmpty()) {
+    moveMinToFront() {
+        if (this.isEmpty()) {
             return null;
         }
 
+        let currentMin;
         let runner = this.head;
 
-        for()
+        while (runner) {
+            if (currentMin == undefined) {
+                currentMin = runner.data;
+            }
+
+            else if (currentMin > runner.data) {
+                currentMin = runner.data;
+            }
+
+            runner = runner.next;
+        }
+        this.removeVal(currentMin)
+        this.insertAtFront(currentMin);
+
+        return this;
     }
 
     // EXTRA
