@@ -3,11 +3,9 @@ public class RangedFighter : Enemy
     public int Distance;
 
 
-    public RangedFighter (string name, int health)
-    {
-        Name = name;
-        Health = health;
-        AttackList = new List<Attack>();
+    public RangedFighter (string name) : base(name)
+    {   
+        List<Attack> AttackList = new List<Attack> {new Attack("Shoot an arrow", 20),new Attack("Throw a knife", 15)};
         Distance = 5;
     }
 
@@ -15,17 +13,16 @@ public class RangedFighter : Enemy
     {
         if(Distance < 10)
         {
-            Console.WriteLine($"Oh no, the enemy is too close! {RangedFighter.Name} cannot attack!")
+            Console.WriteLine($"Oh no, the enemy is too close! {Name} cannot attack!");
         }
         else{
-        Target.Health - Attack.DamageAmount;
-        Console.WriteLine($"{Name} attacks {Target.Name}, dealing {ChosenAttack.DamageAmount} damage and reducing {Target.Name}'s health to {Target.Health}!");
+        base.PerformAttack();
         }
     }
 
     public void Dash()
     {
-        RangedFighter.Distance = 20;
+        Distance += 20;
     }
 
 }

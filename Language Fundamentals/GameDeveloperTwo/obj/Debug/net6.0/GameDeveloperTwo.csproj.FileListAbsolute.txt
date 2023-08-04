@@ -1,0 +1,5 @@
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.csproj.AssemblyReference.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.AssemblyInfoInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.AssemblyInfo.cs
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\Language Fundamentals\GameDeveloperTwo\obj\Debug\net6.0\GameDeveloperTwo.csproj.CoreCompileInputs.cache

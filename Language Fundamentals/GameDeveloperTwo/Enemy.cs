@@ -5,10 +5,10 @@ public class Enemy
     public List<Attack> AttackList;
 
 
-    public Enemy(string name, int health)
+    public Enemy(string name)
     {
         Name = name;
-        Health = health;
+        Health = 100;
         AttackList = new List<Attack>();
     }
 
@@ -18,7 +18,7 @@ public class Enemy
         Console.WriteLine($"{Name} uses {AttackList[rand.Next(0, AttackList.Count)].Name}");
     }
 
-    public void PerformAttack(Enemy Target, Attack ChosenAttack)
+    public virtual void PerformAttack(Enemy Target, Attack ChosenAttack)
     {
         Target.Health - Attack.DamageAmount;
         Console.WriteLine($"{Name} attacks {Target.Name}, dealing {ChosenAttack.DamageAmount} damage and reducing {Target.Name}'s health to {Target.Health}!");
