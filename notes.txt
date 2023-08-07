@@ -20,3 +20,12 @@ Commands List:
 
 Keyboard Shortcuts:
     shift+alt+down = copy paste code below highlighted section
+
+
+
+
+
+Handy Built-Ins:
+
+    TempData
+        -A built-in dictionary-like storage for temporary data in ASP.NET Core
