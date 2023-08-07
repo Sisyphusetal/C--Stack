@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\obj\\Debug\\net6.0\\project.razor.json",
-  "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\FirstWeb.csproj",
+  "SerializedFilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\obj\\Debug\\net6.0\\project.razor.json",
+  "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\FirstMVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,16 +18371,46 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "FirstWeb",
+  "RootNamespace": "FirstMVC",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\Views\\Hello\\Index.cshtml",
-      "TargetPath": "Views\\Hello\\Index.cshtml",
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstWeb\\Views\\Hello\\OneUser.cshtml",
-      "TargetPath": "Views\\Hello\\OneUser.cshtml",
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\Home\\AllPets.cshtml",
+      "TargetPath": "Views\\Home\\AllPets.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Code Alongs\\FirstMVC\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     }
   ],
