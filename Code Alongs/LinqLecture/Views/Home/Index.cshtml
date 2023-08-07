@@ -1,8 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Our Game Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to @ViewData["Title"]</h1>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Platform</th>
+        </tr>
+
+        @foreach(Game g in ViewBag.allGames)
+        {
+            <tr>
+                <td>@g.Title</td>
+                <td>@g.Price</td>
+                <td>@g.Genre</td>
+                <td>@g.Rating</td>
+                <td>@g.Platform</td>
+            </tr>
+        }
+
+    </table>
 </div>
