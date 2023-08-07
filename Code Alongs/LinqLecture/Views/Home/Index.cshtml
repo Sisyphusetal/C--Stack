@@ -19,7 +19,57 @@
         {
             <tr>
                 <td>@g.Title</td>
-                <td>@g.Price</td>
+                <td>@(g.Price == 0?"Free":"$"+g.Price)</td>
+                <td>@g.Genre</td>
+                <td>@g.Rating</td>
+                <td>@g.Platform</td>
+            </tr>
+        }
+
+    </table>
+
+    <h1 class="display-4">All Platforms or T-Rated Games</h1>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Platform</th>
+        </tr>
+
+        @foreach(Game g in ViewBag.all)
+        {
+            <tr>
+                <td>@g.Title</td>
+                <td>@(g.Price == 0?"Free":"$"+g.Price)</td>
+                <td>@g.Genre</td>
+                <td>@g.Rating</td>
+                <td>@g.Platform</td>
+            </tr>
+        }
+
+    </table>
+
+    <h1 class="display-4">M-Rated Games</h1>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Platform</th>
+        </tr>
+
+        @foreach(Game g in ViewBag.mGames)
+        {
+            <tr>
+                <td>@g.Title</td>
+                <td>@(g.Price == 0?"Free":"$"+g.Price)</td>
                 <td>@g.Genre</td>
                 <td>@g.Rating</td>
                 <td>@g.Platform</td>

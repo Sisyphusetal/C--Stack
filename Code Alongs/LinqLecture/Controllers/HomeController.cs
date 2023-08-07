@@ -42,8 +42,15 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        List<Game> allGamesFromDB = AllGames.OrderBy(title => title.Title).ToList();
+        List<Game> allGamesFromDB = AllGames.OrderBy(title => title.Title).OrderBy(p => p.Price).ToList();
         ViewBag.allGames = allGamesFromDB;
+
+        List<Game> allPlatforms = AllGames.Where(f => f.Platform =="All" ||  f.Rating == "T").ToList();
+        ViewBag.all= allPlatforms;
+
+        List<Game> topMGames = AllGames.Where(r => r.Rating == "M").ToList();
+        ViewBag.mGames= topMGames;
+
         return View();
     }
 
