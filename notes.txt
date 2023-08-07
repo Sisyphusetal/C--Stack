@@ -29,3 +29,6 @@ Handy Built-Ins:
 
     TempData
         -A built-in dictionary-like storage for temporary data in ASP.NET Core
+
+
+*******dotnet new mvc -f net6.0 --no-https -o EntityLecture******
