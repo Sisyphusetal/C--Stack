@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperTwo\\GameDeveloperTwo.csproj": {}
+    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\ASP.NET Core\\DojoSurvey\\DojoSurvey.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperTwo\\GameDeveloperTwo.csproj": {
+    "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\ASP.NET Core\\DojoSurvey\\DojoSurvey.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperTwo\\GameDeveloperTwo.csproj",
-        "projectName": "GameDeveloperTwo",
-        "projectPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperTwo\\GameDeveloperTwo.csproj",
+        "projectUniqueName": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\ASP.NET Core\\DojoSurvey\\DojoSurvey.csproj",
+        "projectName": "DojoSurvey",
+        "projectPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\ASP.NET Core\\DojoSurvey\\DojoSurvey.csproj",
         "packagesPath": "C:\\Users\\kurtj\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\Language Fundamentals\\GameDeveloperTwo\\obj\\",
+        "outputPath": "C:\\Users\\kurtj\\OneDrive\\Desktop\\C# Stack\\ASP.NET Core\\DojoSurvey\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kurtj\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,6 +49,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
