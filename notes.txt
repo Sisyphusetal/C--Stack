@@ -32,3 +32,5 @@ Handy Built-Ins:
 
 
 *******dotnet new mvc -f net6.0 --no-https -o EntityLecture******
+
+huel trouble ticket 1243744
