@@ -26,9 +26,8 @@ public class PostController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        // Now any time we want to access our database we use _context   
-        // List<Post> AllPosts = _context.Posts.ToList();
-        return View("AllPosts");
+        List<Post> AllPosts = db.Posts.ToList();
+        return View("AllPosts", AllPosts);
     }
 
     [HttpGet("/posts/new")]
@@ -48,6 +47,66 @@ public class PostController : Controller
         db.Posts.Add(newPost);
         db.SaveChanges();
         
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet("/posts/{postId}")]
+    public IActionResult ViewPost(int postId)
+    {
+        Post post = db.Posts.FirstOrDefault(post => post.PostId == postId);
+        if(post == null)
+        {
+            return RedirectToAction("Index");
+        };
+
+        return View("ViewPost", post);
+    }
+
+    [HttpGet("/posts/{postId}/edit")]
+    public IActionResult Edit(int postId)
+    {
+        Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
+
+        if(post == null)
+        {
+            return RedirectToAction("Index");
+        };
+
+        return View("Edit", post);
+    }
+
+    [HttpPost("/post/{postId}/update")]
+    public IActionResult Update(Post editPost, int postId)
+    {
+        if(!ModelState.IsValid)
+        {
+            return Edit(postId);
+        }
+
+        Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
+
+        if(post == null)
+        {
+            return RedirectToAction("Index");
+        };
+
+        post.Topic = editPost.Topic;
+        post.Body = editPost.Body;
+        post.ImageUrl = editPost.ImageUrl;
+        db.Posts.Update(post);
+        //Save changes requires after Update, save changes actually updates intiated query
+        db.SaveChanges();
+
+        return RedirectToAction("ViewPost", new {postId = postId});
+    }
+
+    [HttpPost("/posts/{postID}/delete")]
+    public IActionResult Delete(int postId)
+    {
+        Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
+        db.Posts.Remove(post);
+        db.SaveChanges();
+
         return RedirectToAction("Index");
     }
 }

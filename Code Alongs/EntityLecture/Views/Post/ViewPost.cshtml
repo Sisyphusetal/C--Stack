@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Read One Page";
+}
+
+@model Post
+<div class="text-center">
+    <h1 class="display-4">Welcome to @ViewData["Title"]</h1>
+    <h2>@Model.Topic</h2>
+    <h4>@Model.Body</h4>
+    <img src="@Model.ImageUrl" alt="broken image" height="200px"><br>
+
+    <a asp-controller="Post" asp-action="Edit" asp-route-postId="@Model.PostId" class="btn btn-outline-warning mt-3">Edit Post</a>
+    <form asp-controller="Post" asp-action="Delete" asp-route-postId="@Model.PostId" class="btn mt-3">
+        <button class="btn btn-outline-danger">Delete Post</button>
+    </form>
+</div>

@@ -2,25 +2,25 @@
 
 <div class="container w-75 mx-auto">
 
-    <h1>New Post</h1>
+    <h1>Edit Post</h1>
 
-    <form asp-action="CreatePost" asp-controller="Post" method="post" class="shadow p-3 rounded">
+    <form asp-action="Update" asp-controller="Post" asp-route-postId="@Model.PostId" method="post" class="shadow p-3 rounded">
         <div class="mb-3">
             <label asp-for="Topic"></label>
             <input asp-for= "Topic" type="text" class="form-control"/>
-            <span asp-validation-for="Topic" class="text-danger font-weight-bold"></span>
+            <span asp-validation-form="Topic" class="text-danger font-weight-bold"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Body"></label>
             <input asp-for= "Body" type="text" class="form-control"/>
-            <span asp-validation-for="Body" class="text-danger font-weight-bold"></span>
+            <span asp-validation-form="Body" class="text-danger font-weight-bold"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="ImageUrl"></label>
             <input asp-for= "ImageUrl" type="text" class="form-control"/>
-            <span asp-validation-for="ImageUrl" class="text-danger font-weight-bold"></span>
+            <span asp-validation-form="ImageUrl" class="text-danger font-weight-bold"></span>
         </div>
         <button class="btn btn-outline-dark">Submit</button>
     </form>
