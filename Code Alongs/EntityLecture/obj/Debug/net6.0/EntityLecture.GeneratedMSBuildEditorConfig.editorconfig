@@ -1,0 +1,52 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EntityLecture
+build_property.RootNamespace = EntityLecture
+build_property.ProjectDir = C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\EntityLecture\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\kurtj\OneDrive\Desktop\C# Stack\Code Alongs\EntityLecture
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Post/AllPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxBbGxQb3N0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Post/New.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxOZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/Code Alongs/EntityLecture/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2omuyvlrcw
