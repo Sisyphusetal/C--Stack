@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Info Page";
+}
+    
+@model List<Survey>
+
+
+    <h1>@ViewData["Title"]</h1>
+
+@foreach(Survey s in Model)
+{
+    <p>Name: @s.Name</p>
+    <p>Location: @s.Location</p>
+    <p>Favorite Language: @s.FavoriteLanguage</p>
+    <p>Comments: @s.Comments</p>
+    <hr>
+}
+    <a href="/"><button>Go Back</button></a>
+
+
