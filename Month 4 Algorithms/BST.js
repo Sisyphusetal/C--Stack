@@ -126,6 +126,92 @@ class BinarySearchTree {
             }
     }
 
+      /**
+   * Determines if this tree contains the given searchVal.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {number} searchVal The number to search for in the node's data.
+   * @returns {boolean} Indicates if the searchVal was found.
+   */
+  contains(searchVal) { 
+    if(this.isEmpty()) {
+      return false;
+    }
+
+    let current = this.root;
+
+    if(searchVal < current.data) {
+      while(current.left != null) {
+        if(current.left.data == searchVal) {
+          return true;
+        }
+        current = current.left;
+      }
+    }
+
+    else {
+      while(current.right != null) {
+        if(current.right.data == searchVal) {
+          return true;
+        }
+        current = current.right;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Determines if this tree contains the given searchVal.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {number} searchVal The number to search for in the node's data.
+   * @returns {boolean} Indicates if the searchVal was found.
+   */
+  containsRecursive(searchVal, current = this.root) { 
+    if(current === null) {
+      return false;
+    }
+
+    if (current.data == searchVal) {
+      return true;
+    }
+
+    if(searchVal < current.data) {
+      return this.containsRecursive(searchVal, current.left)
+    }
+
+    else {
+      return this.containsRecursive(searchVal, current.right)
+    }
+  }
+
+  /**
+   * Calculates the range (max - min) from the given startNode.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} startNode The node to start from to calculate the range.
+   * @returns {number|null} The range of this tree or a sub tree depending on if the
+   *    startNode is the root or not.
+   */
+  range(startNode = this.root) { 
+    if(startNode === null) {
+      return null;
+    }
+
+    if(startNode.left == null && startNode.right == null) {
+      return startNode;
+    }
+
+
+    let minimum = this.min();
+    let maximum = this.max();
+
+    return maximum - minimum;
+  }
+
+
+
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
     if (!node) {
@@ -205,6 +291,14 @@ threeLevelTree.root.right.left = new BSTNode(13);
   //   .insert(66)
   //   .insert(90);
 
-console.log(threeLevelTree.maxRecursive());
-console.log(threeLevelTree.minRecursive());
+// console.log(threeLevelTree.maxRecursive());
+// console.log(threeLevelTree.minRecursive());
 //threeLevelTree.print();
+
+// console.log(threeLevelTree.contains(2))
+// console.log(threeLevelTree.contains(1))
+// console.log(threeLevelTree.containsRecursive(2));
+// console.log(threeLevelTree.containsRecursive(1));
+console.log(threeLevelTree.range());
+// console.log(threeLevelTree.containsRecursive())
+// console.log(threeLevelTree.range())
