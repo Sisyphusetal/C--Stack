@@ -1,52 +1,51 @@
 // Using statements
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using EntityLecture.Models;
 namespace EntityLecture.Controllers;
+
+[SessionCheck]
 public class PostController : Controller
+
 {
     private readonly ILogger<PostController> _logger;
     private MyContext db;
-    // Add a private variable of type MyContext (or whatever you named your context file)
 
-    private MyContext _context;
-    // Here we can "inject" our context service into the constructor     
-    // The "logger" was something that was already in our code, we're just adding around it   
+
     public PostController(ILogger<PostController> logger, MyContext context)
     {
         _logger = logger;
-        // When our HomeController is instantiated, it will fill in _context with context
-        // Remember that when context is initialized, it brings in everything we need from DbContext
-        // which comes from Entity Framework Core
         db = context;
-
     }
 
 
-    [HttpGet("")]
+    [HttpGet("/posts")]
     public IActionResult Index()
     {
         List<Post> AllPosts = db.Posts.ToList();
         return View("AllPosts", AllPosts);
     }
 
+    [SessionCheck]
     [HttpGet("/posts/new")]
     public IActionResult NewPost()
     {
         return View("New");
     }
 
+    [SessionCheck]
     [HttpPost("/posts/create")]
     public IActionResult CreatePost(Post newPost)
     {
-        if(!ModelState.IsValid) 
+        if (!ModelState.IsValid)
         {
             return View("New");
         }
 
         db.Posts.Add(newPost);
         db.SaveChanges();
-        
+
         return RedirectToAction("Index");
     }
 
@@ -54,7 +53,7 @@ public class PostController : Controller
     public IActionResult ViewPost(int postId)
     {
         Post post = db.Posts.FirstOrDefault(post => post.PostId == postId);
-        if(post == null)
+        if (post == null)
         {
             return RedirectToAction("Index");
         };
@@ -67,7 +66,7 @@ public class PostController : Controller
     {
         Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
 
-        if(post == null)
+        if (post == null)
         {
             return RedirectToAction("Index");
         };
@@ -78,14 +77,14 @@ public class PostController : Controller
     [HttpPost("/post/{postId}/update")]
     public IActionResult Update(Post editPost, int postId)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
             return Edit(postId);
         }
 
         Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
 
-        if(post == null)
+        if (post == null)
         {
             return RedirectToAction("Index");
         };
@@ -97,7 +96,7 @@ public class PostController : Controller
         //Save changes requires after Update, save changes actually updates intiated query
         db.SaveChanges();
 
-        return RedirectToAction("ViewPost", new {postId = postId});
+        return RedirectToAction("ViewPost", new { postId = postId });
     }
 
     [HttpPost("/posts/{postID}/delete")]
@@ -108,5 +107,22 @@ public class PostController : Controller
         db.SaveChanges();
 
         return RedirectToAction("Index");
+    }
+
+    // Name this anything you want with the word "Attribute" at the end
+    public class SessionCheckAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            // Find the session, but remember it may be null so we need int?
+            int? userId = context.HttpContext.Session.GetInt32("UUID");
+            // Check to see if we got back null
+            if (userId == null)
+            {
+                // Redirect to the Index page if there was nothing in session
+                // "Home" here is referring to "HomeController", you can use any controller that is appropriate here
+                context.Result = new RedirectToActionResult("Index", "Home", null);
+            }
+        }
     }
 }
