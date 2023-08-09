@@ -2,11 +2,11 @@
  * Class to represent a Node in a Binary Search Tree (BST).
  */
 class BSTNode {
-    /**
-     * Constructs a new instance of a BST node.
-     * @param {number} data The integer to store in the node.
-     */
-    constructor(data) {
+  /**
+   * Constructs a new instance of a BST node.
+   * @param {number} data The integer to store in the node.
+   */
+  constructor(data) {
     this.data = data;
     /**
        * These properties are how this node is connected to other nodes to form
@@ -18,9 +18,9 @@ class BSTNode {
        * @type {BSTNode|null}
        */
     this.left = null;
-      /** @type {BSTNode|null} */
+    /** @type {BSTNode|null} */
     this.right = null;
-    }
+  }
 }
 
 /**
@@ -28,7 +28,7 @@ class BSTNode {
    * their parent and the data of nodes to the right are > their parent's data.
    */
 class BinarySearchTree {
-    constructor() {
+  constructor() {
     /**
        * Just like the head of a linked list, this is the start of our tree which
        * branches downward from here.
@@ -36,113 +36,111 @@ class BinarySearchTree {
        * @type {BSTNode|null}
        */
     this.root = null;
-    }
+  }
 
-    /**
-     * Determines if this tree is empty.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @returns {boolean} Indicates if this tree is empty.
-     */
-    isEmpty() {
-        if(this.root == null) {
-            return null;
-        }
-    }
-
-    /**
-     * Retrieves the smallest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The smallest integer from this tree.
-     */
-    min(current = this.root) {
-        if(this.isEmpty()) {
-            return current;
-        }
-
-        while(current.left != null) {
-            current = current.left;
-        }
-
-        return current.data;
-    }
-
-    /**
-     * Retrieves the smallest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The smallest integer from this tree.
-     */
-    minRecursive(current = this.root) {
-            if (current.left === null) {
-                return current.data;
-            } 
-
-            else {
-                return this.minRecursive(current.left);
-            }
-    }
-
-    /**
-     * Retrieves the largest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The largest integer from this tree.
-     */
-    max(current = this.root) {
-        if(this.isEmpty()) {
-            return current;
-        }
-
-        while(current.right != null) {
-            current = current.right;
-        }
-
-        return current.data;
-    }
-
-    /**
-     * Retrieves the largest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The largest integer from this tree.
-     */
-    maxRecursive(current = this.root) {
-            if (current.right === null) {
-                return current.data;
-            } 
-
-            else {
-                return this.maxRecursive(current.right);
-            }
-    }
-
-      /**
-   * Determines if this tree contains the given searchVal.
+  /**
+   * Determines if this tree is empty.
    * - Time: O(?).
    * - Space: O(?).
-   * @param {number} searchVal The number to search for in the node's data.
-   * @returns {boolean} Indicates if the searchVal was found.
+   * @returns {boolean} Indicates if this tree is empty.
    */
-  contains(searchVal) { 
-    if(this.isEmpty()) {
+  isEmpty() {
+    return this.root === null;
+  }
+
+  /**
+   * Retrieves the smallest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The smallest integer from this tree.
+   */
+  min(current = this.root) {
+    if (this.isEmpty()) {
+      return current;
+    }
+
+    while (current.left != null) {
+      current = current.left;
+    }
+
+    return current.data;
+  }
+
+  /**
+   * Retrieves the smallest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The smallest integer from this tree.
+   */
+  minRecursive(current = this.root) {
+    if (current.left === null) {
+      return current.data;
+    }
+
+    else {
+      return this.minRecursive(current.left);
+    }
+  }
+
+  /**
+   * Retrieves the largest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The largest integer from this tree.
+   */
+  max(current = this.root) {
+    if (this.isEmpty()) {
+      return current;
+    }
+
+    while (current.right != null) {
+      current = current.right;
+    }
+
+    return current.data;
+  }
+
+  /**
+   * Retrieves the largest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The largest integer from this tree.
+   */
+  maxRecursive(current = this.root) {
+    if (current.right === null) {
+      return current.data;
+    }
+
+    else {
+      return this.maxRecursive(current.right);
+    }
+  }
+
+  /**
+* Determines if this tree contains the given searchVal.
+* - Time: O(?).
+* - Space: O(?).
+* @param {number} searchVal The number to search for in the node's data.
+* @returns {boolean} Indicates if the searchVal was found.
+*/
+  contains(searchVal) {
+    if (this.isEmpty()) {
       return false;
     }
 
     let current = this.root;
 
-    if(searchVal < current.data) {
-      while(current.left != null) {
-        if(current.left.data == searchVal) {
+    if (searchVal < current.data) {
+      while (current.left != null) {
+        if (current.left.data == searchVal) {
           return true;
         }
         current = current.left;
@@ -150,8 +148,8 @@ class BinarySearchTree {
     }
 
     else {
-      while(current.right != null) {
-        if(current.right.data == searchVal) {
+      while (current.right != null) {
+        if (current.right.data == searchVal) {
           return true;
         }
         current = current.right;
@@ -168,8 +166,8 @@ class BinarySearchTree {
    * @param {number} searchVal The number to search for in the node's data.
    * @returns {boolean} Indicates if the searchVal was found.
    */
-  containsRecursive(searchVal, current = this.root) { 
-    if(current === null) {
+  containsRecursive(searchVal, current = this.root) {
+    if (current === null) {
       return false;
     }
 
@@ -177,7 +175,7 @@ class BinarySearchTree {
       return true;
     }
 
-    if(searchVal < current.data) {
+    if (searchVal < current.data) {
       return this.containsRecursive(searchVal, current.left)
     }
 
@@ -194,12 +192,12 @@ class BinarySearchTree {
    * @returns {number|null} The range of this tree or a sub tree depending on if the
    *    startNode is the root or not.
    */
-  range(startNode = this.root) { 
-    if(startNode === null) {
+  range(startNode = this.root) {
+    if (startNode === null) {
       return null;
     }
 
-    if(startNode.left == null && startNode.right == null) {
+    if (startNode.left == null && startNode.right == null) {
       return startNode;
     }
 
@@ -210,24 +208,98 @@ class BinarySearchTree {
     return maximum - minimum;
   }
 
+  /**
+ * Inserts a new node with the given newVal in the right place to preserve
+ * the order of this tree.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {number} newVal The data to be added to a new node.
+ * @returns {BinarySearchTree} This tree.
+ */
+  insert(newVal) {
+    if (this.isEmpty()) {
+      this.root = new BSTNode(newVal);
+      return this;
+    }
+
+    let current = this.root;
+
+    while (current != null) {
+      if (newVal < current.data) {
+        if (current.left == null) {
+          current.left = new BSTNode(newVal);
+          return this;
+        }
+
+        current = current.left;
+      }
+
+      else {
+        if (current.right == null) {
+          current.right = new BSTNode(newVal);
+          return this;
+        }
+
+        current = current.right;
+      }
+    }
+  }
+  /**
+   * Inserts a new node with the given newVal in the right place to preserve
+   * the order of this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {number} newVal The data to be added to a new node.
+   * @param {Node} curr The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {BinarySearchTree} This tree.
+   */
+  insertRecursive(newVal, curr = this.root) {
+    if (this.isEmpty()) {
+      this.root = newVal;
+    }
+
+    let current = this.root;
+
+    if (newVal < current.data) {
+      if (current.left == null) {
+        current.left = new BSTNode(newVal);
+        return this;
+      }
+      else {
+        return this.insertRecursive(newVal, current.left);
+      }
+    }
+    else {
+      if (current.right == null) {
+        current.right = new BSTNode(newVal);
+        return this;
+      }
+      else {
+        return this.insertRecursive(newVal, current.right);
+      }
+    }
+  }
 
 
-    // Logs this tree horizontally with the root on the left.
-    print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
+
+
+  // Logs this tree horizontally with the root on the left.
+  print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
     if (!node) {
-        return;
+      return;
     }
 
     spaceCnt += spaceIncr;
     this.print(node.right, spaceCnt);
 
     console.log(
-        " ".repeat(spaceCnt < spaceIncr ? 0 : spaceCnt - spaceIncr) +
-        `${node.data}`
+      " ".repeat(spaceCnt < spaceIncr ? 0 : spaceCnt - spaceIncr) +
+      `${node.data}`
     );
 
     this.print(node.left, spaceCnt);
-    }
+  }
 }
 
 const emptyTree = new BinarySearchTree();
@@ -235,12 +307,12 @@ const emptyTree = new BinarySearchTree();
 const oneNodeTree = new BinarySearchTree();
 oneNodeTree.root = new BSTNode(10);
 
-  /* twoLevelTree
-          root
-          10
-        /   \
-      5     15
-  */
+/* twoLevelTree
+        root
+        10
+      /   \
+    5     15
+*/
 const twoLevelTree = new BinarySearchTree();
 twoLevelTree.root = new BSTNode(10);
 twoLevelTree.root.left = new BSTNode(5);
@@ -272,24 +344,25 @@ threeLevelTree.root.right.left = new BSTNode(13);
         /   \   /  \    /  \   /  \
       4    12  18  24  31  44 66  90
   */
-  /***************** Uncomment after insert method is created. ****************/
-  // const fullTree = new BinarySearchTree();
-  // fullTree
-  //   .insert(25)
-  //   .insert(15)
-  //   .insert(10)
-  //   .insert(22)
-  //   .insert(4)
-  //   .insert(12)
-  //   .insert(18)
-  //   .insert(24)
-  //   .insert(50)
-  //   .insert(35)
-  //   .insert(70)
-  //   .insert(31)
-  //   .insert(44)
-  //   .insert(66)
-  //   .insert(90);
+/***************** Uncomment after insert method is created. ****************/
+const fullTree = new BinarySearchTree();
+fullTree
+  .insert(25)
+  .insert(15)
+  .insert(10)
+  .insert(22)
+  .insert(4)
+  .insert(12)
+  .insert(18)
+  .insert(24)
+  .insert(50)
+  .insert(35)
+  .insert(70)
+  .insert(31)
+  .insert(44)
+  .insert(66)
+  .insert(90);
+  fullTree.print();
 
 // console.log(threeLevelTree.maxRecursive());
 // console.log(threeLevelTree.minRecursive());
@@ -299,6 +372,11 @@ threeLevelTree.root.right.left = new BSTNode(13);
 // console.log(threeLevelTree.contains(1))
 // console.log(threeLevelTree.containsRecursive(2));
 // console.log(threeLevelTree.containsRecursive(1));
-console.log(threeLevelTree.range());
+// console.log(threeLevelTree.range());
 // console.log(threeLevelTree.containsRecursive())
 // console.log(threeLevelTree.range())
+// threeLevelTree.insertRecursive(4);
+// threeLevelTree.insertRecursive(-1);
+// threeLevelTree.insertRecursive(42);
+// threeLevelTree.print();
+
