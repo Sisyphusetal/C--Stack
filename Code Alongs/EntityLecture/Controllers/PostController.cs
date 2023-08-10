@@ -3,6 +3,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using EntityLecture.Models;
+using Microsoft.EntityFrameworkCore;
 namespace EntityLecture.Controllers;
 
 [SessionCheck]
@@ -23,7 +24,7 @@ public class PostController : Controller
     [HttpGet("/posts")]
     public IActionResult Index()
     {
-        List<Post> AllPosts = db.Posts.ToList();
+        List<Post> AllPosts = db.Posts.Include(p => p.Creator).ToList();
         return View("AllPosts", AllPosts);
     }
 
@@ -43,6 +44,8 @@ public class PostController : Controller
             return View("New");
         }
 
+        newPost.UserId = (int)HttpContext.Session.GetInt32("UUID");
+
         db.Posts.Add(newPost);
         db.SaveChanges();
 
@@ -53,10 +56,6 @@ public class PostController : Controller
     public IActionResult ViewPost(int postId)
     {
         Post post = db.Posts.FirstOrDefault(post => post.PostId == postId);
-        if (post == null)
-        {
-            return RedirectToAction("Index");
-        };
 
         return View("ViewPost", post);
     }
@@ -66,7 +65,7 @@ public class PostController : Controller
     {
         Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
 
-        if (post == null)
+        if (post == null || post.UserId != HttpContext.Session.GetInt32("UUID"))
         {
             return RedirectToAction("Index");
         };
@@ -103,6 +102,12 @@ public class PostController : Controller
     public IActionResult Delete(int postId)
     {
         Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
+
+        if (post == null || post.UserId != HttpContext.Session.GetInt32("UUID"))
+        {
+            return RedirectToAction("Index");
+        };
+
         db.Posts.Remove(post);
         db.SaveChanges();
 

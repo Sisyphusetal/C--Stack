@@ -1,4 +1,5 @@
 #pragma warning disable CS8618
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -34,6 +35,8 @@ public class User
 
     [Compare("Password")]
     public string PasswordConfirm { get; set; }
+
+    List<Post> AuthoredPosts {get; set;}= new List<Post>();
 
     public class UniqueEmailAttribute : ValidationAttribute
     {

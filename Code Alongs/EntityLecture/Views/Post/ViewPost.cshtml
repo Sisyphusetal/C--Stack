@@ -9,8 +9,12 @@
     <h4>@Model.Body</h4>
     <img src="@Model.ImageUrl" alt="broken image" height="200px"><br>
 
+    @if(Model.UserId == Context.Session.GetInt32("UUID"))
+    {
     <a asp-controller="Post" asp-action="Edit" asp-route-postId="@Model.PostId" class="btn btn-outline-warning mt-3">Edit Post</a>
     <form asp-controller="Post" asp-action="Delete" asp-route-postId="@Model.PostId" class="btn mt-3">
         <button class="btn btn-outline-danger">Delete Post</button>
     </form>
+    }
+
 </div>

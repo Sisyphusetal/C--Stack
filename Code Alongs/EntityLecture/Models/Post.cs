@@ -23,7 +23,10 @@ public class Post
     [Display(Name ="Enter URL here: ")]
     public string ImageUrl {get; set;}
 
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime CreatedAt {get; set;} = DateTime.Now;
 
-    public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    public DateTime UpdatedAt {get; set;} = DateTime.Now;
+
+    public int UserId {get; set;}
+    public User? Creator {get; set;}
 }
