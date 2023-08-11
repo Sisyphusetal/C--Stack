@@ -24,7 +24,7 @@ public class PostController : Controller
     [HttpGet("/posts")]
     public IActionResult Index()
     {
-        List<Post> AllPosts = db.Posts.Include(p => p.Creator).ToList();
+        List<Post> AllPosts = db.Posts.Include(p => p.Creator).Include(p => p.PostLikes).ThenInclude(l => l.User).ToList();
         return View("AllPosts", AllPosts);
     }
 
@@ -110,6 +110,43 @@ public class PostController : Controller
 
         db.Posts.Remove(post);
         db.SaveChanges();
+
+        return RedirectToAction("Index");
+
+    }
+
+            //like/unlike button
+        //condition to determine if they already liked
+        //update query for root
+        //fix the cards
+
+    [HttpPost("/posts/{postId}/like")]
+    public IActionResult Like(int postId)
+    {
+
+        //First get session
+        int? userId = HttpContext.Session.GetInt32("UUID");
+
+        //if sessions is null, redirect to home
+        if(userId == null) {
+            return RedirectToAction("Index");
+        }
+
+        UserPostLike existingLike = db.UserPostLikes.FirstOrDefault(like => like.UserId == userId.Value && like.PostId == postId);
+        if(existingLike != null) {
+            db.UserPostLikes.Remove(existingLike);
+        }
+        else
+        {
+            UserPostLike newLike = new UserPostLike()
+            {
+                PostId = postId,
+                UserId = userId.Value
+            };
+            db.UserPostLikes.Add(newLike);
+        }
+        db.SaveChanges();
+
 
         return RedirectToAction("Index");
     }

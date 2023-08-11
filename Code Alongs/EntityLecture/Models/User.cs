@@ -36,7 +36,9 @@ public class User
     [Compare("Password")]
     public string PasswordConfirm { get; set; }
 
-    List<Post> AuthoredPosts {get; set;}= new List<Post>();
+    public List<Post> AuthoredPosts {get; set;}= new List<Post>();
+
+    public List<UserPostLike> UserLikes {get; set;} = new List<UserPostLike>();
 
     public class UniqueEmailAttribute : ValidationAttribute
     {

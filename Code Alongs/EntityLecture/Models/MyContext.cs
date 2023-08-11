@@ -1,6 +1,7 @@
 #pragma warning disable CS8618
 // We can disable our warnings safely because we know the framework will assign non-null values 
 // when it constructs this class for us.
+using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityLecture.Models;
@@ -16,4 +17,6 @@ public class MyContext : DbContext
     public DbSet<Post> Posts { get; set; }
 
     public DbSet<User> Users { get; set; }
+
+    public DbSet<UserPostLike> UserPostLikes {get; set;}
 }

@@ -12,12 +12,31 @@
                 <a asp-controller="Post" asp-action="ViewPost" asp-route-postId="@post.PostId">@post.Topic</a>
             </h4>
             <div class="card-body">
-                <img src="@post.ImageUrl" alt="broken image"  class="w-50">
-            </div>
-            <div class="card-footer shadow rounded mx-auto mb-3">
+                <img src="@post.ImageUrl" alt="broken image" class="w-50">
                 <p class=card-text>@post.Body</p>
                 <small class="text-muted">Submitted on: @post.CreatedAt</small>
                 <small class="text-muted">Submitted by: @post.Creator.FirstName</small>
+            </div>
+            <div class="card-footer shadow rounded w-100 mx-auto">
+                <h3>Has been liked: @post.PostLikes.Count times</h3> 
+                @foreach (UserPostLike like in post.PostLikes)
+                {
+                    <p>@like.User.FirstName liked this!</p>
+                }
+                    @{bool alreadyLiked = post.PostLikes.Any(like => like.UserId == Context.Session.GetInt32("UUID"));}
+
+                    <form asp-controller="Post" asp-action="Like" asp-route-postId=@post.PostId method="post">
+                        <button class="btn btn-outline-danger">
+                            @if(alreadyLiked)
+                            {
+                                <span>Unlike</span>
+                            }
+                            else
+                            {
+                                <span>Like</span>
+                            }
+                        </button>
+                    </form>
             </div>
         </div>
     }

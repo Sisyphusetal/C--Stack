@@ -1,5 +1,6 @@
 #pragma warning disable CS8618
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection.Emit;
 
@@ -29,4 +30,6 @@ public class Post
 
     public int UserId {get; set;}
     public User? Creator {get; set;}
+
+    public List<UserPostLike> PostLikes = new List<UserPostLike>();
 }
