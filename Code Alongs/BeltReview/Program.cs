@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using BeltReview.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
+app.UseSession();
+
 
 var app = builder.Build();
 

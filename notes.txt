@@ -16,6 +16,8 @@ Commands List:
     #pragma warning disable CS8618
         -Disables warning for non nullable fields not being filled
 
+    dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.1
+    dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.3
 
 
 
