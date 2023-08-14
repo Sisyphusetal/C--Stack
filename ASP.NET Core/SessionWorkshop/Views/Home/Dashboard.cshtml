@@ -1,0 +1,27 @@
+<h2>Welcome, @ViewBag.Name</h2> <!-- Use ViewBag.Name here -->
+<p>Value: @ViewBag.Value</p>
+
+<form method="post" action="/Home/Action">
+    <input type="hidden" name="operation" value="add" />
+    <input type="submit" value="+ 1" />
+</form>
+
+<form method="post" action="/Home/Action">
+    <input type="hidden" name="operation" value="minus" />
+    <input type="submit" value="- 1" />
+</form>
+
+<form method="post" action="/Home/Action">
+    <input type="hidden" name="operation" value="multiply" />
+    <input type="submit" value="* 2" />
+</form>
+
+<form method="post" action="/Home/Action">
+    <input type="hidden" name="operation" value="random" />
+    <input type="submit" value="+ random" />
+</form>
+
+<form method="post" action="/Home/Logout">
+    <input type="submit" value="Log out" />
+</form>
+

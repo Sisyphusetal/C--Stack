@@ -3,7 +3,6 @@ Commands List:
     dotnet new console -f net6.0 -o <ProjectName>
     dotnet new web -f net6.0 --no-https -o <ProjectName>
     dotnet new mvc -f net6.0 --no-https -o <ProjectName>
-    
     dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.1
     dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.3
 
