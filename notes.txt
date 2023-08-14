@@ -16,8 +16,9 @@ Commands List:
     #pragma warning disable CS8618
         -Disables warning for non nullable fields not being filled
 
-    dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.1
-    dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.3
+    Installation for framework tools use Entity Framework:
+        -dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.1
+        -dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.3
 
 
 
@@ -35,4 +36,12 @@ Handy Built-Ins:
     TempData
         -A built-in dictionary-like storage for temporary data in ASP.NET Core
 
-huel trouble ticket 1243744
+
+File Explanations:
+    MyContext.cs
+        -"Once you have all your models created, there is one more model we need to make in our Models folder.
+         This is our context file. The context class is what forms the relationship between our models and the
+         database. Think of it as an object that sits between our app and the database that translates our
+         queries for us. Context classes, by convention, always have names that end in "Context". You can name
+         the file anything (though something informative is your best option), just remember to add "Context"
+         to the end!"
