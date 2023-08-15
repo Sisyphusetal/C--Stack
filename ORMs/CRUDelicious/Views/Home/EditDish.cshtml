@@ -1,0 +1,58 @@
+@model Dish
+
+<div class="container w-75 mx-auto">
+
+    <h1>Add a New Dish!</h1>
+    <a asp-controller="Home" asp-action="Index">Home</a>
+
+    <form asp-action="UpdateDish" asp-controller="Home" asp-route-id="@Model.DishId" method="post" class="shadow p-3 rounded">
+        <div>
+            <div class="mb-3">
+                <label asp-for="Chef"></label>
+                <input asp-for="Chef" type="text" class="form-control" />
+                <span asp-validation-for="Chef" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Calories"></label>
+                <input asp-for="Calories" type="text" class="form-control" />
+                <span asp-validation-for="Calories" class="text-danger font-weight-bold"></span>
+            </div>
+        </div>
+        <div>
+            <div class="mb-3">
+                <label asp-for="Tastiness">Tastiness</label>
+
+                <select name="Tastiness">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                </select>
+                <span asp-validation-for="Tastiness" class="text-danger font-weight-bold"></span>
+            </div>
+        </div>
+        <div>
+            <div class="mb-3">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" type="text" class="form-control" cols="30" rows="10"></textarea>
+                <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+            </div>
+        </div>
+        <button class="btn btn-outline-dark">Submit</button>
+    </form>
+
+</div>

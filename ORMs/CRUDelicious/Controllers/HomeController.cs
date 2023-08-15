@@ -19,7 +19,13 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         List<Dish> AllDishes = db.Dishes.ToList();
-        return View();
+        return View(AllDishes);
+    }
+
+    [HttpGet("/dishes/new")]
+    public IActionResult NewDish()
+    {
+        return View("NewDish");
     }
 
     [HttpPost("/dishes/create")]
@@ -43,8 +49,64 @@ public class HomeController : Controller
     public IActionResult ShowDish(int id)
     {
         Dish OneDish = db.Dishes.FirstOrDefault(a => a.DishId == id);
-        return View(OneDish);
+        return View("OneDish", OneDish);
     }
+
+    [HttpGet("dishes/{id}/edit")]
+    public IActionResult EditDish(int id)
+    {
+        Dish? DishToEdit = db.Dishes.FirstOrDefault(i => i.DishId == id);
+        return View("EditDish", DishToEdit);
+    }
+
+    [HttpPost("dishes/{id}/update")]
+    public IActionResult UpdateDish(Dish editDish, int id)
+    {
+        Dish? dish = db.Dishes.FirstOrDefault(d => d.DishId == id);
+
+        if (dish == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        if (ModelState.IsValid)
+        {
+            dish.Name = editDish.Name;
+            dish.Chef = editDish.Chef;
+            dish.Tastiness = editDish.Tastiness;
+            dish.Calories = editDish.Calories;
+            dish.Description = editDish.Description;
+
+            db.Dishes.Update(dish);
+            db.SaveChanges();
+
+            return RedirectToAction("ShowDish", new { id = id });
+        }
+        else
+        {
+            return View("EditDish", dish);
+        }
+    }
+
+    [HttpPost("dishes/{id}/delete")]
+    public IActionResult DeleteDish(int id)
+    {
+        Dish? DishToDelete = db.Dishes.SingleOrDefault(i => i.DishId == id);
+
+        if(DishToDelete == null) 
+        {
+            return RedirectToAction("EditDish");
+        }
+        
+        db.Dishes.Remove(DishToDelete);
+        db.SaveChanges();
+
+        return RedirectToAction("Index");
+    }
+
+
+
+
 
 
     public IActionResult Privacy()

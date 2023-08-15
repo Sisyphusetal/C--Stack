@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Dish>
+
+@{
     ViewData["Title"] = "CRUDelicious";
 }
 
@@ -6,14 +8,22 @@
     <h1 class="display-4">Welcome to @ViewData["Title"]</h1>
     <a asp-controller="Home" asp-action="Index">Home</a>
     |
-    <a asp-controller="Home" asp-action="CreateDish">Create Dish</a>
+    <a asp-controller="Home" asp-action="NewDish">Create Dish</a>
 
     <h3>Check out some recent dishes: </h3>
 
     @foreach (Dish dish in Model)
     {
-        <div>
-            @dish.Name by @dish.Chef
+        <div class="card shadow rounded mx-auto w-75 mb-3">
+            <h4 class="card-title text-center bg-dark text-light rounded-top">
+                <a asp-controller="Home" asp-action="ShowDish" asp-route-id="@dish.DishId">@dish.Name</a>
+            </h4>
+            <div class="card-body">
+                <p class=card-text>@dish.Description</p>
+                <small class="text-muted">Submitted on: @dish.CreatedAt</small>
+                <small class="text-muted">Submitted by: @dish.Chef</small>
+            </div>
+            <div class="card-footer shadow rounded w-100 mx-auto"></div>
         </div>
     }
 </div>

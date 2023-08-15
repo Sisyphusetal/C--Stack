@@ -15,8 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\CRUDelicious
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/ORMs/CRUDelicious/Views/Home/EditDish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0RGlzaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/kurtj/OneDrive/Desktop/C\# Stack/ORMs/CRUDelicious/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/ORMs/CRUDelicious/Views/Home/NewDish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdEaXNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kurtj/OneDrive/Desktop/C\# Stack/ORMs/CRUDelicious/Views/Home/OneDish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbmVEaXNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/kurtj/OneDrive/Desktop/C\# Stack/ORMs/CRUDelicious/Views/Home/Privacy.cshtml]
