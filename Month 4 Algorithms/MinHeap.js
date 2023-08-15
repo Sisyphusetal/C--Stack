@@ -29,11 +29,11 @@ class MinHeap {
         return Math.floor(i / 2);
     }
 
-    idxofLeftChild(i) {
+    idxOfLeftChild(i) {
         return i * 2;
     }
 
-    idxofRightChild(i) {
+    idxOfRightChild(i) {
         return i * 2 + 1;
     }
 
@@ -79,6 +79,58 @@ class MinHeap {
     }
 
     /**
+     * Extracts the min num from the heap and then re-orders the heap to
+     * maintain order so the next min is ready to be extracted.
+     * 1. Save the first node to a temp var.
+     * 2. Pop last node off and set idx1 equal to the popped value.
+     * 3. Iteratively swap the old last node that is now at idx1 with it's
+     *    smallest child IF the smallest child is smaller than it.
+     * - Time: O(log n) logarithmic due to shiftDown.
+     * - Space: O(1) constant.
+     * @returns {?number} The min number or null if empty.
+     */
+    extract() {
+        if (this.heap.length <= 1) {
+            return null;
+        }
+
+        let firstNode = this.heap[1];
+
+        this.heap[1] = this.heap.pop();
+
+        let currentIndex = 1;
+        while (currentIndex < this.heap.length) {
+            if (this.heap[this.idxOfLeftChild(currentIndex)] < this.heap[this.idxOfRightChild(currentIndex)]) {
+                let swap = this.heap[this.idxOfLeftChild(currentIndex)];
+
+                this.heap[this.idxOfLeftChild(currentIndex)] = this.heap[currentIndex]
+
+                this.heap[currentIndex] = swap;
+
+                currentIndex = this.heap[this.idxOfLeftChild(currentIndex)];
+            }
+
+            else if (this.heap[this.idxOfRightChild(currentIndex)] < this.heap[this.idxOfLeftChild(currentIndex)]) {
+                let swap = this.heap[this.idxOfRightChild(currentIndex)];
+
+                this.heap[this.idxOfRightChild(currentIndex)] = this.heap[currentIndex]
+
+                this.heap[currentIndex] = swap;
+
+                currentIndex = this.heap[this.idxOfRightChild(currentIndex)];
+            }
+
+            else {
+                break;
+            }
+
+            return firstNode;
+        }
+    }
+
+
+
+    /**
      * Logs the tree horizontally with the root on the left and the index in
      * parenthesis using reverse inorder traversal.
      */
@@ -100,8 +152,9 @@ class MinHeap {
 }
 
 let test = new MinHeap();
-test.insert(10).insert(9).insert(8).insert(7).insert(6).insert(5).insert(4);
+test.insert(10).insert(9).insert(8).insert(7).insert(6).insert(5).insert(4).insert(2);
 test.printHorizontalTree();
-console.log(test.top()); // prints out 4
+// console.log(test.top()); // prints out 4
+console.log(test.extract());
 
 
