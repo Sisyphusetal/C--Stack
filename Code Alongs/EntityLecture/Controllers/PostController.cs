@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using EntityLecture.Models;
 using Microsoft.EntityFrameworkCore;
+
 namespace EntityLecture.Controllers;
 
 [SessionCheck]
@@ -115,10 +116,10 @@ public class PostController : Controller
 
     }
 
-            //like/unlike button
-        //condition to determine if they already liked
-        //update query for root
-        //fix the cards
+    //like/unlike button
+    //condition to determine if they already liked
+    //update query for root
+    //fix the cards
 
     [HttpPost("/posts/{postId}/like")]
     public IActionResult Like(int postId)
@@ -128,12 +129,14 @@ public class PostController : Controller
         int? userId = HttpContext.Session.GetInt32("UUID");
 
         //if sessions is null, redirect to home
-        if(userId == null) {
+        if (userId == null)
+        {
             return RedirectToAction("Index");
         }
 
         UserPostLike existingLike = db.UserPostLikes.FirstOrDefault(like => like.UserId == userId.Value && like.PostId == postId);
-        if(existingLike != null) {
+        if (existingLike != null)
+        {
             db.UserPostLikes.Remove(existingLike);
         }
         else
@@ -150,21 +153,20 @@ public class PostController : Controller
 
         return RedirectToAction("Index");
     }
+}
 
-    // Name this anything you want with the word "Attribute" at the end
-    public class SessionCheckAttribute : ActionFilterAttribute
+public class SessionCheckAttribute : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext context)
     {
-        public override void OnActionExecuting(ActionExecutingContext context)
+        // Find the session, but remember it may be null so we need int?
+        int? userId = context.HttpContext.Session.GetInt32("UUID");
+        // Check to see if we got back null
+        if (userId == null)
         {
-            // Find the session, but remember it may be null so we need int?
-            int? userId = context.HttpContext.Session.GetInt32("UUID");
-            // Check to see if we got back null
-            if (userId == null)
-            {
-                // Redirect to the Index page if there was nothing in session
-                // "Home" here is referring to "HomeController", you can use any controller that is appropriate here
-                context.Result = new RedirectToActionResult("Index", "Home", null);
-            }
+            // Redirect to the Index page if there was nothing in session
+            // "Home" here is referring to "HomeController", you can use any controller that is appropriate here
+            context.Result = new RedirectToActionResult("Index", "Home", null);
         }
     }
 }
