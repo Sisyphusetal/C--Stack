@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CRUDelicious.Models;
+using System;
 
 namespace CRUDelicious.Controllers;
 
@@ -40,8 +41,7 @@ public class HomeController : Controller
         }
         else
         {
-            //Error handling
-            return RedirectToAction("Index");
+            return View("NewDish");
         }
     }
 
@@ -76,8 +76,8 @@ public class HomeController : Controller
             dish.Tastiness = editDish.Tastiness;
             dish.Calories = editDish.Calories;
             dish.Description = editDish.Description;
+            dish.UpdatedAt = DateTime.Now;
 
-            db.Dishes.Update(dish);
             db.SaveChanges();
 
             return RedirectToAction("ShowDish", new { id = id });
