@@ -101,23 +101,33 @@ class MinHeap {
         let currentIndex = 1;
         while (currentIndex < this.heap.length) {
             if (this.heap[this.idxOfLeftChild(currentIndex)] < this.heap[this.idxOfRightChild(currentIndex)]) {
-                let swap = this.heap[this.idxOfLeftChild(currentIndex)];
+                if (this.heap[this.idxOfLeftChild(currentIndex)] < this.heap[currentIndex]) {
+                    let swap = this.heap[this.idxOfLeftChild(currentIndex)];
 
-                this.heap[this.idxOfLeftChild(currentIndex)] = this.heap[currentIndex]
+                    this.heap[this.idxOfLeftChild(currentIndex)] = this.heap[currentIndex]
 
-                this.heap[currentIndex] = swap;
+                    this.heap[currentIndex] = swap;
 
-                currentIndex = this.heap[this.idxOfLeftChild(currentIndex)];
+                    currentIndex = this.heap[this.idxOfLeftChild(currentIndex)];
+                }
+                else {
+                    break;
+                }
             }
 
             else if (this.heap[this.idxOfRightChild(currentIndex)] < this.heap[this.idxOfLeftChild(currentIndex)]) {
-                let swap = this.heap[this.idxOfRightChild(currentIndex)];
+                if (this.heap[this.idxOfRightChild(currentIndex)] < this.heap[currentIndex]) {
+                    let swap = this.heap[this.idxOfRightChild(currentIndex)];
 
-                this.heap[this.idxOfRightChild(currentIndex)] = this.heap[currentIndex]
+                    this.heap[this.idxOfRightChild(currentIndex)] = this.heap[currentIndex]
 
-                this.heap[currentIndex] = swap;
+                    this.heap[currentIndex] = swap;
 
-                currentIndex = this.heap[this.idxOfRightChild(currentIndex)];
+                    currentIndex = this.heap[this.idxOfRightChild(currentIndex)];
+                }
+                else {
+                    break;
+                }
             }
 
             else {
@@ -156,5 +166,6 @@ test.insert(10).insert(9).insert(8).insert(7).insert(6).insert(5).insert(4).inse
 test.printHorizontalTree();
 // console.log(test.top()); // prints out 4
 console.log(test.extract());
+test.printHorizontalTree();
 
 
