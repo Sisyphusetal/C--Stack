@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ChefsAndDishes.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChefsAndDishes.Controllers;
 
@@ -19,7 +19,7 @@ public class ChefController : Controller
 
     public IActionResult Index()
     {
-        List<Chef> AllChefs = db.Chefs.ToList();
+        List<Chef> AllChefs = db.Chefs.Include(d => d.AllDishes).ToList();
         return View(AllChefs);
     }
 
@@ -32,16 +32,16 @@ public class ChefController : Controller
     [HttpPost("/chefs/create")]
     public IActionResult CreateChef(Chef newChef)
     {
-        if (ModelState.IsValid)
+        if(ModelState.IsValid)
         {
-            db.Add(newDish);
+            db.Add(newChef);
             db.SaveChanges();
 
             return RedirectToAction("Index");
         }
         else
         {
-            return View("AddDish");
+            return View("AddChef");
         }
     }
 

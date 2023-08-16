@@ -1,18 +1,18 @@
 @model Dish
 
-<a asp-controller="Home" asp-action="Index">Home</a>
+<a asp-controller="Chef" asp-action="Index">Chefs</a>
+|
+<a asp-controller="Dish" asp-action="AllDishes">Dishes</a>
+|
+<a asp-controller="Chef" asp-action="AddChef">Add a Chef</a>
+|
+<a asp-controller="Dish" asp-action="AddDish">Add a Dish</a>
 <div class="container w-75 mx-auto">
 
     <h1>Add a Dish</h1>
 
     <form asp-action="CreateDish" asp-controller="Dish" method="post" class="shadow p-3 rounded">
         <div>
-            <div class="mb-3">
-                <label asp-for="Chef"></label>
-                <input asp-for="Chef" type="text" class="form-control" />
-                <span asp-validation-for="Chef" class="text-danger font-weight-bold"></span>
-            </div>
-
             <div class="mb-3">
                 <label asp-for="Name"></label>
                 <input asp-for="Name" type="text" class="form-control" />
@@ -29,7 +29,7 @@
             <div class="mb-3">
                 <label asp-for="Tastiness">Tastiness</label>
 
-                <select name="Tastiness">
+                <select asp-for="Tastiness" name="Tastiness">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -41,9 +41,15 @@
         </div>
         <div>
             <div class="mb-3">
-                <label asp-for="Description"></label>
-                <textarea asp-for="Description" type="text" class="form-control" cols="30" rows="10"></textarea>
-                <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+                <label asp-for="ChefId">Chefs</label>
+                <select asp-for="ChefId">
+                    @foreach (Chef c in ViewBag.AllChefs)
+                    {
+                        
+                        <option value="@c.ChefId">@c.FirstName @c.LastName @c.ChefId</option>
+                    }
+                </select>
+                <span asp-validation-for="ChefId" class="text-danger font-weight-bold"></span>
             </div>
         </div>
         <button class="btn btn-outline-dark">Submit</button>

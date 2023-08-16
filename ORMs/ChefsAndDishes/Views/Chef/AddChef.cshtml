@@ -1,9 +1,15 @@
-@model Dish
+@model Chef
 
-<a asp-controller="Home" asp-action="Index">Home</a>
+<a asp-controller="Chef" asp-action="Index">Chefs</a>
+|
+<a asp-controller="Dish" asp-action="AllDishes">Dishes</a>
+|
+<a asp-controller="Chef" asp-action="AddChef">Add a Chef</a>
+|
+<a asp-controller="Dish" asp-action="AddDish">Add a Dish</a>
 <div class="container w-75 mx-auto">
 
-    <h1>Add a Dish</h1>
+    <h1>Add a Chef</h1>
 
     <form asp-action="CreateChef" asp-controller="Chef" method="post" class="shadow p-3 rounded">
         <div>
@@ -21,29 +27,8 @@
 
             <div class="mb-3">
                 <label asp-for="BirthDate"></label>
-                <input asp-for="BirthDate" type="text" class="form-control" />
+                <input asp-for="BirthDate" type="date" class="form-control" />
                 <span asp-validation-for="BirthDate" class="text-danger font-weight-bold"></span>
-            </div>
-        </div>
-        <div>
-            <div class="mb-3">
-                <label asp-for="Tastiness">Tastiness</label>
-
-                <select name="Tastiness">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <span asp-validation-for="Tastiness" class="text-danger font-weight-bold"></span>
-            </div>
-        </div>
-        <div>
-            <div class="mb-3">
-                <label asp-for="Description"></label>
-                <textarea asp-for="Description" type="text" class="form-control" cols="30" rows="10"></textarea>
-                <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
             </div>
         </div>
         <button class="btn btn-outline-dark">Submit</button>

@@ -1,0 +1,47 @@
+@model List<Dish>
+    
+<a asp-controller="Chef" asp-action="Index">Chefs</a>
+|
+<a asp-controller="Dish" asp-action="AllDishes">Dishes</a>
+|
+<a asp-controller="Chef" asp-action="AddChef">Add a Chef</a>
+|
+<a asp-controller="Dish" asp-action="AddDish">Add a Dish</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Chef
+            </th>
+            <th>
+                Tastiness
+            </th>
+            <th>
+                Calories
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Dish dish in Model)
+        {
+            <tr>
+                <td>
+                    @dish.Name
+                </td>
+                <td>
+                    @dish.Creator.FirstName
+                </td>
+                <td>
+                    @dish.Tastiness
+                </td>
+                <td>
+                    @dish.Calories
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

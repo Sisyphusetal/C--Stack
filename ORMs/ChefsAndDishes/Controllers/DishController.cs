@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ChefsAndDishes.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 
 namespace ChefsAndDishes.Controllers;
 
@@ -21,30 +22,31 @@ public class DishController : Controller
     [HttpGet("/dishes")]
     public IActionResult AllDishes()
     {
-        List<Dish> AllDishes = db.Dishes.ToList();
+        List<Dish> AllDishes = db.Dishes.Include(c => c.Creator).ToList();
         return View(AllDishes);
     }
 
     [HttpGet("/dishes/new")]
-    public IActionResult NewDish()
+    public IActionResult AddDish()
     {
-        return View("NewDish");
+        List<Chef> AllChefs = db.Chefs.ToList();
+        ViewBag.AllChefs = AllChefs;
+        return View();
     }
 
     [HttpPost("/dishes/create")]
     public IActionResult CreateDish(Dish newDish)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            db.Add(newDish);
-            db.SaveChanges();
-
-            return RedirectToAction("Index");
+            List<Chef> AllChefs = db.Chefs.ToList();
+            ViewBag.AllChefs = AllChefs;
+            return View("AddDish");
         }
-        else
-        {
-            return View("NewDish");
-        }
+        
+        db.Dishes.Add(newDish);
+        db.SaveChanges();
+        return RedirectToAction("AllDishes");
     }
 
     public IActionResult Privacy()

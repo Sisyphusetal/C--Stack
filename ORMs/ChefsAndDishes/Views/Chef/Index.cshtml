@@ -1,1 +1,45 @@
-﻿
+﻿@model List<Chef>
+
+<a asp-controller="Chef" asp-action="Index">Chefs</a>
+|
+<a asp-controller="Dish" asp-action="AllDishes">Dishes</a>
+|
+<a asp-controller="Chef" asp-action="AddChef">Add a Chef</a>
+|
+<a asp-controller="Dish" asp-action="AddDish">Add a Dish</a>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Chef Name
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    # of Recipes
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Chef chef in Model)
+            {
+                var age = (DateTime.Now.Year - @chef.BirthDate.Year);
+                <tr>
+                    <td>
+                        @chef.FirstName @chef.LastName
+                    </td>
+                    <td>
+                        @age
+                    </td>
+                    <td>
+                        @chef.AllDishes.Count
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
