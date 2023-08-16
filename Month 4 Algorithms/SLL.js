@@ -505,6 +505,57 @@ class SinglyLinkedList {
         return arr;
     }
 
+    /**
+ * Reverses this list in-place without using any extra lists.
+ * - Time: (?).
+ * - Space: (?).
+ * @returns {SinglyLinkedList} This list.
+ */
+    reverse() { 
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        let current = this.head;
+        let prevNode = null;
+        let nextNode = null;
+
+        while(current) {
+            nextNode = current.next;
+            current.next = prevNode;
+            prevNode = current;
+            current = nextNode;
+            nextNode = null;
+            console.log(nextNode.data);
+        }
+
+        this.head = prevNode;
+        return this.head;
+    }
+
+    /**
+     * Determines whether the list has a loop in it which would result in
+     * infinitely traversing unless otherwise avoided. A loop is when a node's
+     * next points to a node that is behind it.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {boolean} Whether the list has a loop or not.
+     */
+    hasLoop() { 
+
+    }
+
+    /**
+     * Removes all the nodes that have a negative integer as their data.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {SinglyLinkedList} This list after the negatives are removed.
+     */
+    removeNegatives() { 
+
+    }
+
+
     print() {
         if (this.isEmpty()) {
             console.log("This list is empty");
@@ -568,11 +619,12 @@ const emptyList = new SinglyLinkedList();
 let myList = new SinglyLinkedList();
 let myList2 = new SinglyLinkedList();
 myList.insertAtBack(1).insertAtBack(2).insertAtBack(3).insertAtBack(4).insertAtBack(5).insertAtBack(6);
-myList2.insertAtBack(1).insertAtBack(2).insertAtBack(3)
+myList2.insertAtBack(1).insertAtBack(2).insertAtBack(3);
 // myList.print();
 // myList.removeBack()
 //.removeBack();
-myList.concat(myList2);
+// myList.concat(myList2);
+myList.reverse(1);
 myList.print();
 // myList.contains(2);
 // myList.contains(14);

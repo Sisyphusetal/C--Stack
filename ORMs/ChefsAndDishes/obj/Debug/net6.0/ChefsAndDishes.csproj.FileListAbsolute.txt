@@ -1,0 +1,8 @@
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.csproj.AssemblyReference.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.AssemblyInfoInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.AssemblyInfo.cs
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.csproj.CoreCompileInputs.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.RazorAssemblyInfo.cache
+C:\Users\kurtj\OneDrive\Desktop\C# Stack\ORMs\ChefsAndDishes\obj\Debug\net6.0\ChefsAndDishes.RazorAssemblyInfo.cs
