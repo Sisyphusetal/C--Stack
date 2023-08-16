@@ -16,19 +16,27 @@ public class Chef
     public string LastName { get; set; }
     [Required]
     [DataType(DataType.Date)]
-    [UniqueBirthday]
+    [Over18]
     public DateTime BirthDate { get; set; }
     [Required]
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-    public class UniqueBirthdayAttribute : ValidationAttribute
+    public class Over18Attribute : ValidationAttribute
     {
-        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value == null)
+            DateTime now = DateTime.Now;
+            DateTime userInput = (DateTime)value;
+            DateTime EighteenYearsAgo = DateTime.Now.AddYears(-18);
+
+            if (userInput < EighteenYearsAgo)
             {
-                return new ValidationResult("Birthday is required!");
+                return new ValidationResult("You must be over 18 to be a proper chef.");
+            }
+            else
+            {
+                return ValidationResult.Success;
             }
         }
     }

@@ -38,8 +38,8 @@ public class UserController : Controller
             return View("Index");
         }
 
-        PasswordHasher<User> hashBrowns = new PasswordHasher<User>();
-        newUser.Password = hashBrowns.HashPassword(newUser, newUser.Password);
+        PasswordHasher<User> hashedPassword = new PasswordHasher<User>();
+        newUser.Password = hashedPassword.HashPassword(newUser, newUser.Password);
 
         db.Users.Add(newUser);
         db.SaveChanges();

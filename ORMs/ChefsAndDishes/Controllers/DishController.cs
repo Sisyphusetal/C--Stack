@@ -17,7 +17,9 @@ public class DishController : Controller
         db = context;
     }
 
-    public IActionResult Index()
+
+    [HttpGet("/dishes")]
+    public IActionResult AllDishes()
     {
         List<Dish> AllDishes = db.Dishes.ToList();
         return View(AllDishes);
