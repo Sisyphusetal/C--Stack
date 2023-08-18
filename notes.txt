@@ -26,6 +26,7 @@ Commands List:
 
 Keyboard Shortcuts:
     shift+alt+down = copy paste code below highlighted section
+    alt-click = select multiple spots to type/delete at the same time
 
 
 
