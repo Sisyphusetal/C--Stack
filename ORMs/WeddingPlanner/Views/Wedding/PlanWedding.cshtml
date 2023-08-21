@@ -1,1 +1,44 @@
-<h1>plan a wedding</h1>
+@model Wedding
+
+<a asp-controller="Wedding" asp-action="AllWeddings">Home</a>
+|
+<a asp-controller="Wedding" asp-action="PlanWedding">Plan a Wedding</a>
+|
+<a asp-controller="Wedding" asp-action="ViewWedding">View Wedding</a>
+|
+<a asp-controller="User" asp-action="Logout">Logout</a>
+
+<div class="container w-75 mx-auto">
+
+    <h1>Create a Wedding</h1>
+
+    <form asp-action="CreateWedding" asp-controller="Wedding" method="post" class="shadow p-3 rounded">
+        <div>
+            <div class="mb-3">
+                <label asp-for="WedderOne"></label>
+                <input asp-for="WedderOne" type="text" class="form-control" />
+                <span asp-validation-for="WedderOne" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="WedderTwo"></label>
+                <input asp-for="WedderTwo" type="text" class="form-control" />
+                <span asp-validation-for="WedderTwo" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="WeddingDate"></label>
+                <input asp-for="WeddingDate" type="date" class="form-control" />
+                <span asp-validation-for="WeddingDate" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" type="text" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger font-weight-bold"></span>
+            </div>
+        </div>
+        <button class="btn btn-outline-dark">Create</button>
+    </form>
+
+</div>

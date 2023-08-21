@@ -5,6 +5,8 @@ using WeddingPlanner.Models;
 using System.Runtime.ExceptionServices;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace WeddingPlanner.Controllers;
 
@@ -25,7 +27,9 @@ public class WeddingController : Controller
     [HttpGet("/weddings")]
     public IActionResult AllWeddings()
     {
-        List<Wedding> AllWeddings = db.Weddings.Include(c => c.Creator).ToList();
+
+        List<Wedding> AllWeddings = db.Weddings.Include(c => c.Creator).Include(w => w.Guests).ToList();
+
         return View(AllWeddings);
     }
 
@@ -44,20 +48,76 @@ public class WeddingController : Controller
         {
             // List<Chef> AllChefs = db.Chefs.ToList();
             // ViewBag.AllChefs = AllChefs;
-            return View("ViewWedding");
+            return View("PlanWedding", newWedding);
         }
+
+        int userId = HttpContext.Session.GetInt32("UUID").Value;
+
+        newWedding.UserId = userId;
 
         db.Weddings.Add(newWedding);
         db.SaveChanges();
-        return RedirectToAction("ViewWedding", new {id = newWedding.WeddingId});
+        return View("ViewWedding", new { id = newWedding.WeddingId });
     }
 
     [HttpGet("/weddings/{id}")]
     public IActionResult ViewWedding(int id)
     {
-        Wedding OneWedding = db.Weddings.FirstOrDefault(w => w.WeddingId == id);
+        Wedding OneWedding = db.Weddings.Include(w => w.Creator).Include(w => w.Guests).ThenInclude(rsvp => rsvp.User).FirstOrDefault(w => w.WeddingId == id);
+
         return View(OneWedding);
     }
+
+    [HttpPost("/weddings/{id}/rsvp")]
+    public IActionResult RSVP(int id)
+    {
+        int userId = HttpContext.Session.GetInt32("UUID").Value;
+
+        Rsvp rsvp = new Rsvp
+        {
+            UserId = userId,
+            WeddingId = id
+        };
+
+        db.Rsvps.Add(rsvp);
+        db.SaveChanges();
+
+        return RedirectToAction("AllWeddings");
+    }
+
+    [HttpPost("/weddings/{id}/unrsvp")]
+    public IActionResult UnRSVP(int id)
+    {
+        int userId = HttpContext.Session.GetInt32("UUID").Value;
+
+        Rsvp rsvp = db.Rsvps.FirstOrDefault(r => r.WeddingId == id && r.UserId == userId);
+
+        if (rsvp != null)
+        {
+            db.Rsvps.Remove(rsvp);
+            db.SaveChanges();
+        }
+
+        return RedirectToAction("AllWeddings");
+    }
+
+    [HttpPost("/weddings/{id}/delete")]
+    public IActionResult DeleteWedding(int id)
+    {
+        int userId = HttpContext.Session.GetInt32("UUID").Value;
+
+        Wedding wedding = db.Weddings.FirstOrDefault(w => w.WeddingId == id && w.UserId == userId);
+
+        if (wedding != null)
+        {
+            db.Weddings.Remove(wedding);
+            db.SaveChanges();
+        }
+
+        return RedirectToAction("AllWeddings");
+    }
+
+
 
     public IActionResult Privacy()
     {

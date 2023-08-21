@@ -1,6 +1,77 @@
-<h1>All weddings</h1>
+@model List<Wedding>
+
+
+<h1>All Weddings</h1>
 <a asp-controller="Wedding" asp-action="AllWeddings">Home</a>
 |
 <a asp-controller="Wedding" asp-action="PlanWedding">Plan a Wedding</a>
 |
+<a asp-controller="Wedding" asp-action="ViewWedding">View Wedding</a>
+|
 <a asp-controller="User" asp-action="Logout">Logout</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Wedder of
+            </th>
+            <th>
+                Wedder Date
+            </th>
+            <th>
+                Guest Count
+            </th>
+            <th>
+                Action
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Wedding w in Model)
+        {
+            <tr>
+                <td>@w.WedderOne & @w.WedderTwo</td>
+                <td>@w.WeddingDate</td>
+                <td>
+                    @if (w.Guests == null || w.Guests.Count() < 0)
+                    {
+                        @:0
+                    }
+                    else
+                    {
+                        @w.Guests.Count()
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Wedding" asp-action="ViewWedding" asp-route-id="@w.WeddingId">View</a>
+                </td>
+                <td>
+                    @if (w.UserId == Context.Session.GetInt32("UUID").Value)
+                    {
+                        <form asp-action="DeleteWedding" asp-route-id="@w.WeddingId" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    }
+                    else
+                    {
+                        var rsvp = w.Guests.FirstOrDefault(g => g.UserId == Context.Session.GetInt32("UUID"));
+                        if (rsvp == null)
+                        {
+                            <form asp-action="RSVP" asp-route-id="@w.WeddingId" method="post">
+                                <button type="submit">RSVP</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form asp-action="UnRSVP" asp-route-id="@w.WeddingId" method="post">
+                                <button type="submit">Un-RSVP</button>
+                            </form>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
